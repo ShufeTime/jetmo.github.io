@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>blog.md</title>
+      <link href="/2018/08/24/blog/"/>
+      <url>/2018/08/24/blog/</url>
+      <content type="html"><![CDATA[<p>这是我的博客.</p>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>git基本命令</title>
+      <link href="/2018/08/16/git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/08/16/git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<ul><li>git init 初始化git,当前文件夹使用git管理</li><li>git add . 添加到暂存区</li><li>git commit -m “修改明细”  提交到本地仓库</li><li>git status 查看状态</li><li>git push 推送到远程服务器</li><li>git pull 从远程服务器拉取代码</li></ul><hr><ul><li>git log / reflog 查看日记</li><li>git reset HEAD^  回退到上一个版本或者指定版本</li><li>git reset –hard 589e122 回退到指定版本</li><li>git diff  对比</li><li>git rm 删除</li><li>git checkout 检查</li></ul><hr><blockquote><p>标签</p></blockquote><ul><li>git tag -a v1.0 -m “version 1.0” 给项目打标签</li><li>git push origin v1.0  push到远程服务器</li></ul><hr><ul><li>git brach 查看当前分支</li><li>git checkout -b dev  创建dev 分支</li><li>git push -u origin dev 把当前分支同步到服务器</li><li>git checkout master  切换分支</li><li>git merge dev 合并分支</li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/08/16/hello-world/"/>
+      <url>/2018/08/16/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+    </entry>
+    
+  
+  
+</search>
