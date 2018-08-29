@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Leejia Blog</title>
   
-  
+  <subtitle>代码如诗,字字珠玑.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>centos下启动flask程序</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlf9owcr0002tctjrmqxj0io/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlf9owcr0002tctjrmqxj0io/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfb0u7o0002m0tjo15mzmgt/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfb0u7o0002m0tjo15mzmgt/</id>
     <published>2018-08-29T06:49:24.000Z</published>
     <updated>2018-08-29T06:49:24.000Z</updated>
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlf9owcz000btctj3wsjnkhk/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlf9owcz000btctj3wsjnkhk/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfb0u85000bm0tjd05zcn94/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfb0u85000bm0tjd05zcn94/</id>
     <published>2018-08-29T01:50:19.000Z</published>
     <updated>2018-08-29T07:51:54.988Z</updated>
     
@@ -72,19 +72,19 @@
   
   <entry>
     <title>关于centos操作系统安装MySQL-python失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlf9owcx0008tctjzpim489i/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlf9owcx0008tctjzpim489i/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfb0u830008m0tjvluk92uc/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfb0u830008m0tjvluk92uc/</id>
     <published>2018-08-29T01:42:03.000Z</published>
-    <updated>2018-08-29T13:57:05.826Z</updated>
+    <updated>2018-08-29T15:30:45.812Z</updated>
     
-    <content type="html"><![CDATA[<p>flask迁移数据库的时候会出现.找不到mysqldb模块这样的情况.在centos系统上方案一就可以有效解决.但是在ubuntu 16.04上推荐优先使用方案二.</p><h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><pre><code>MySQLdb不支持python3.x</code></pre><hr><h3 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h3><p>centos 使用yum 是找不到YSQL-python这个包的.所以需要下载安装包执行安装.</p><p>安装完依赖包后，开始安装MYSQL-python：</p><p>1、下载tar包：</p><p>执行：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>pypi.python.org<span class="regexp">/packages/</span>c8<span class="regexp">/8f/</span>aedf47a2e973a2d2f225ac98537472fc928ad61b9647fb370870404c594b<span class="regexp">/MySQL-python-1.2.3c1.tar.gz#md5=310dd856e439d070b59ece6dd7a0734d</span></span><br></pre></td></tr></table></figure><p>完成tar下载</p><p>2、解压执行：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xzvf</span>  <span class="selector-tag">MySQL-python-1</span><span class="selector-class">.2</span><span class="selector-class">.3c1</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure><p>进入解压之后的文件夹根目录</p><p>3、编译(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> build</span><br></pre></td></tr></table></figure><p>4、安装(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> install</span><br></pre></td></tr></table></figure><p>经过上述步骤就完成了MySQL-python</p><hr><h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h3><p>如果还是不能解决问题可以尝试:用pymysql来代替MySQLdb<br>具体位置:<code>__init.py__</code>,<code>manage.py</code><br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="title">pymysql</span>.install_as_MySQLdb()</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<p>flask迁移数据库的时候会出现.找不到mysqldb模块这样的情况.在centos系统上方案一就可以有效解决.但是在ubuntu 16.04上推荐优先使用方案二.</p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><pre><code>MySQLdb不支持python3.x</code></pre><h2 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h2><p>centos 使用yum 是找不到YSQL-python这个包的.所以需要下载安装包执行安装.</p><p>安装完依赖包后，开始安装MYSQL-python：</p><p>1、下载tar包：</p><p>执行：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>pypi.python.org<span class="regexp">/packages/</span>c8<span class="regexp">/8f/</span>aedf47a2e973a2d2f225ac98537472fc928ad61b9647fb370870404c594b<span class="regexp">/MySQL-python-1.2.3c1.tar.gz#md5=310dd856e439d070b59ece6dd7a0734d</span></span><br></pre></td></tr></table></figure><p>完成tar下载</p><p>2、解压执行：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xzvf</span>  <span class="selector-tag">MySQL-python-1</span><span class="selector-class">.2</span><span class="selector-class">.3c1</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure><p>进入解压之后的文件夹根目录</p><p>3、编译(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> build</span><br></pre></td></tr></table></figure><p>4、安装(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> install</span><br></pre></td></tr></table></figure><p>经过上述步骤就完成了MySQL-python</p><h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>如果还是不能解决问题可以尝试:用pymysql来代替MySQLdb<br>具体位置:<code>__init.py__</code>,<code>manage.py</code><br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="title">pymysql</span>.install_as_MySQLdb()</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;flask迁移数据库的时候会出现.找不到mysqldb模块这样的情况.在centos系统上方案一就可以有效解决.但是在ubuntu 16.04上推荐优先使用方案二.&lt;/p&gt;
-&lt;h3 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title
+&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title
       
     
     </summary>
@@ -102,8 +102,8 @@
   
   <entry>
     <title>blog.md</title>
-    <link href="https://www.leejia.me/2018/08/24/cjlf9owcn0000tctjfgp3equx/"/>
-    <id>https://www.leejia.me/2018/08/24/cjlf9owcn0000tctjfgp3equx/</id>
+    <link href="https://www.leejia.me/2018/08/24/cjlfb0u7i0000m0tjfw63vk7o/"/>
+    <id>https://www.leejia.me/2018/08/24/cjlfb0u7i0000m0tjfw63vk7o/</id>
     <published>2018-08-24T15:40:44.000Z</published>
     <updated>2018-08-24T15:43:16.324Z</updated>
     
@@ -124,8 +124,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlf9owcv0006tctjjcnqmqj8/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlf9owcv0006tctjjcnqmqj8/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfb0u7z0006m0tjq3didya8/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfb0u7z0006m0tjq3didya8/</id>
     <published>2018-08-16T05:11:42.000Z</published>
     <updated>2018-08-29T07:04:24.701Z</updated>
     
@@ -156,8 +156,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlf9owcw0007tctjvl195wqs/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlf9owcw0007tctjvl195wqs/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfb0u810007m0tjc8z7ebjn/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfb0u810007m0tjc8z7ebjn/</id>
     <published>2018-08-16T05:04:29.784Z</published>
     <updated>2018-08-29T07:19:14.343Z</updated>
     
@@ -177,8 +177,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlf9owcs0003tctj22d824kg/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlf9owcs0003tctj22d824kg/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfb0u7t0003m0tj6u995r18/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfb0u7t0003m0tj6u995r18/</id>
     <published>2018-08-16T04:56:12.000Z</published>
     <updated>2018-08-29T07:04:19.202Z</updated>
     
