@@ -4,8 +4,8 @@
     
     <entry>
       <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-      <link href="/2018/08/29/cjlei9kp800057stj74yew27r/"/>
-      <url>/2018/08/29/cjlei9kp800057stj74yew27r/</url>
+      <link href="/2018/08/29/cjlej3wej0006m1tjz5g1ta3h/"/>
+      <url>/2018/08/29/cjlej3wej0006m1tjz5g1ta3h/</url>
       <content type="html"><![CDATA[<p>使用CentOS基本源安装的Python，安装Python2链接库</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> python-devel</span><br></pre></td></tr></table></figure><p>使用CentOS EPEL源安装的Python，安装Python3对应版本的链接库包</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> python34-devel</span><br></pre></td></tr></table></figure><p>现在再安装<code>mysqlclient</code>就不会出现<code>编译中断。</code></p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: command <span class="string">'gcc'</span> failed with <span class="keyword">exit</span> status <span class="number">1</span></span><br></pre></td></tr></table></figure><p>这样的错误了. 安装:</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> mysqlclient</span><br></pre></td></tr></table></figure><p>后续再安装<code>Flask-MySQLdb</code> 也不会报错啦.<br>安装:    </p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> flask-mysqldb</span><br></pre></td></tr></table></figure>]]></content>
       
       
@@ -19,8 +19,8 @@
     
     <entry>
       <title>关于centos操作系统安装MySQL-python失败的解决方案</title>
-      <link href="/2018/08/29/cjlei9kp700047stji5fh6gj9/"/>
-      <url>/2018/08/29/cjlei9kp700047stji5fh6gj9/</url>
+      <link href="/2018/08/29/cjlej3wee0003m1tjqxtp2qys/"/>
+      <url>/2018/08/29/cjlej3wee0003m1tjqxtp2qys/</url>
       <content type="html"><![CDATA[<p>centos 使用yum 是找不到YSQL-python这个包的.所以需要下载安装包执行安装.</p><p>安装完依赖包后，开始安装MYSQL-python：</p><p>1、下载tar包：</p><p>执行：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>pypi.python.org<span class="regexp">/packages/</span>c8<span class="regexp">/8f/</span>aedf47a2e973a2d2f225ac98537472fc928ad61b9647fb370870404c594b<span class="regexp">/MySQL-python-1.2.3c1.tar.gz#md5=310dd856e439d070b59ece6dd7a0734d</span></span><br></pre></td></tr></table></figure><p>完成tar下载</p><p>2、解压执行：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xzvf</span>  <span class="selector-tag">MySQL-python-1</span><span class="selector-class">.2</span><span class="selector-class">.3c1</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure><p>进入解压之后的文件夹根目录</p><p>3、编译(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> build</span><br></pre></td></tr></table></figure><p>4、安装(用python2 如果在python3虚拟环境请退出虚拟环境)</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup<span class="selector-class">.py</span> install</span><br></pre></td></tr></table></figure><p>经过上述步骤就完成了MySQL-python</p>]]></content>
       
       
@@ -34,8 +34,8 @@
     
     <entry>
       <title>blog.md</title>
-      <link href="/2018/08/24/cjlei9kow00007stjtpj7vt6q/"/>
-      <url>/2018/08/24/cjlei9kow00007stjtpj7vt6q/</url>
+      <link href="/2018/08/24/cjlej3we60000m1tjucjbwkwl/"/>
+      <url>/2018/08/24/cjlej3we60000m1tjucjbwkwl/</url>
       <content type="html"><![CDATA[<p>这是我的博客.</p>]]></content>
       
       
@@ -43,8 +43,8 @@
     
     <entry>
       <title>git基本命令</title>
-      <link href="/2018/08/16/cjlei9kp000017stj9fntus6j/"/>
-      <url>/2018/08/16/cjlei9kp000017stj9fntus6j/</url>
+      <link href="/2018/08/16/cjlej3web0002m1tjo7n0ch47/"/>
+      <url>/2018/08/16/cjlej3web0002m1tjo7n0ch47/</url>
       <content type="html"><![CDATA[<ul><li>git init 初始化git,当前文件夹使用git管理</li><li>git add . 添加到暂存区</li><li>git commit -m “修改明细”  提交到本地仓库</li><li>git status 查看状态</li><li>git push 推送到远程服务器</li><li>git pull 从远程服务器拉取代码</li></ul><hr><ul><li>git log / reflog 查看日记</li><li>git reset HEAD^  回退到上一个版本或者指定版本</li><li>git reset –hard 589e122 回退到指定版本</li><li>git diff  对比</li><li>git rm 删除</li><li>git checkout 检查</li></ul><hr><blockquote><p>标签</p></blockquote><ul><li>git tag -a v1.0 -m “version 1.0” 给项目打标签</li><li>git push origin v1.0  push到远程服务器</li></ul><hr><ul><li>git brach 查看当前分支</li><li>git checkout -b dev  创建dev 分支</li><li>git push -u origin dev 把当前分支同步到服务器</li><li>git checkout master  切换分支</li><li>git merge dev 合并分支</li></ul>]]></content>
       
       
@@ -58,8 +58,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/2018/08/16/cjlei9kp300027stjgtth0rhe/"/>
-      <url>/2018/08/16/cjlei9kp300027stjgtth0rhe/</url>
+      <link href="/2018/08/16/cjlej3wei0005m1tjgkoqc2ls/"/>
+      <url>/2018/08/16/cjlej3wei0005m1tjgkoqc2ls/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
       
       
