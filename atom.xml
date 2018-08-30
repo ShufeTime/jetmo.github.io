@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-08-29T06:49:24.000Z</updated>
+  <updated>2018-08-30T02:47:00.000Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -17,9 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>最简单的django程序</title>
+    <link href="https://www.leejia.me/2018/08/30/cjlfz6hx0000cfttj2e8teu21/"/>
+    <id>https://www.leejia.me/2018/08/30/cjlfz6hx0000cfttj2e8teu21/</id>
+    <published>2018-08-30T02:47:00.000Z</published>
+    <updated>2018-08-30T02:47:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>最简单的django程序.包含创建工程,创建一个app,配置url,编辑视图函数, 注册app</p></blockquote><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject django_demo</span><br><span class="line"><span class="built_in">cd</span> django_demo</span><br></pre></td></tr></table></figure><h3 id="创建app"><a href="#创建app" class="headerlink" title="创建app"></a>创建app</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp users</span><br></pre></td></tr></table></figure><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在settings.py中</span></span><br><span class="line">users.apps.UsersConfig</span><br></pre></td></tr></table></figure><h3 id="编辑视图函数"><a href="#编辑视图函数" class="headerlink" title="编辑视图函数"></a>编辑视图函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中 views模块中</span></span><br><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    视图函数</span></span><br><span class="line"><span class="string">    :param request: django 默认的第一个参数,用户接收request请求</span></span><br><span class="line"><span class="string">    :return: 响应对象</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="built_in">return</span> HttpResponse(<span class="string">"这是用户界面"</span>)</span><br></pre></td></tr></table></figure><h3 id="添加视图url"><a href="#添加视图url" class="headerlink" title="添加视图url"></a>添加视图url</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中创建urls模块</span></span><br><span class="line">from django.conf.urls import url</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># url(路径, 视图)</span></span><br><span class="line">    url(r<span class="string">'^index/$'</span>, views.index),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="url前缀"><a href="#url前缀" class="headerlink" title="url前缀"></a>url前缀</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在全局urls中配置app</span></span><br><span class="line">from django.conf.urls import url, include</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类比flask中蓝图前缀</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    ...</span><br><span class="line">    url(r<span class="string">'^users/'</span>, include(<span class="string">'users.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="启动工程"><a href="#启动工程" class="headerlink" title="启动工程"></a>启动工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure><h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8000/users/index</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;最简单的django程序.包含创建工程,创建一个app,配置url,编辑视图函数, 注册app&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;创建工程&quot;&gt;&lt;a href=&quot;#创建工程&quot; class=&quot;headerlink&quot; title=&quot;创建
+      
+    
+    </summary>
+    
+      <category term="django" scheme="https://www.leejia.me/categories/django/"/>
+    
+    
+      <category term="django" scheme="https://www.leejia.me/tags/django/"/>
+    
+      <category term="python" scheme="https://www.leejia.me/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>centos下启动flask程序</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfb6qlm0002uctj8vjl2ocg/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfb6qlm0002uctj8vjl2ocg/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwo0002fttj1aswvazw/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfz6hwo0002fttj1aswvazw/</id>
     <published>2018-08-29T06:49:24.000Z</published>
     <updated>2018-08-29T06:49:24.000Z</updated>
     
@@ -45,8 +75,8 @@
   
   <entry>
     <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfb6qm5000cuctj9yz7szwe/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfb6qm5000cuctj9yz7szwe/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwz000bfttj8ksx4z7x/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfz6hwz000bfttj8ksx4z7x/</id>
     <published>2018-08-29T01:50:19.000Z</published>
     <updated>2018-08-29T07:51:54.988Z</updated>
     
@@ -72,8 +102,8 @@
   
   <entry>
     <title>关于centos操作系统安装MySQL-python失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfb6qm30009uctjb76lmqi2/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfb6qm30009uctjb76lmqi2/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwx0008fttjsj9avfmw/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlfz6hwx0008fttjsj9avfmw/</id>
     <published>2018-08-29T01:42:03.000Z</published>
     <updated>2018-08-29T15:30:45.812Z</updated>
     
@@ -102,8 +132,8 @@
   
   <entry>
     <title>blog.md</title>
-    <link href="https://www.leejia.me/2018/08/24/cjlfb6qlf0000uctjcx4n2bjc/"/>
-    <id>https://www.leejia.me/2018/08/24/cjlfb6qlf0000uctjcx4n2bjc/</id>
+    <link href="https://www.leejia.me/2018/08/24/cjlfz6hwk0000fttjxmc3y9ow/"/>
+    <id>https://www.leejia.me/2018/08/24/cjlfz6hwk0000fttjxmc3y9ow/</id>
     <published>2018-08-24T15:40:44.000Z</published>
     <updated>2018-08-24T15:43:16.324Z</updated>
     
@@ -124,8 +154,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfb6qly0007uctjbvxygpya/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfb6qly0007uctjbvxygpya/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfz6hwv0006fttj93c786lf/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfz6hwv0006fttj93c786lf/</id>
     <published>2018-08-16T05:11:42.000Z</published>
     <updated>2018-08-29T07:04:24.701Z</updated>
     
@@ -156,8 +186,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfb6qm10008uctj722qhg0h/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfb6qm10008uctj722qhg0h/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfz6hww0007fttj9o1oz8yq/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfz6hww0007fttj9o1oz8yq/</id>
     <published>2018-08-16T05:04:29.784Z</published>
     <updated>2018-08-29T07:19:14.343Z</updated>
     
@@ -177,8 +207,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfb6qlr0004uctj4ctjh2dg/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfb6qlr0004uctj4ctjh2dg/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlfz6hwq0003fttj3oacsy4d/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlfz6hwq0003fttj3oacsy4d/</id>
     <published>2018-08-16T04:56:12.000Z</published>
     <updated>2018-08-29T07:04:19.202Z</updated>
     
