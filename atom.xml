@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Leejia Blog</title>
   
-  
+  <subtitle>做了过河卒子，只能拼命向前。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-08-30T02:47:00.000Z</updated>
+  <updated>2018-08-30T03:50:11.269Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -17,9 +17,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>stevedore</title>
+    <link href="https://www.leejia.me/2018/08/30/cjlg3gxdu0008yqtjm2li3nrh/"/>
+    <id>https://www.leejia.me/2018/08/30/cjlg3gxdu0008yqtjm2li3nrh/</id>
+    <published>2018-08-30T03:50:11.000Z</published>
+    <updated>2018-08-30T03:50:11.269Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>最简单的django程序</title>
-    <link href="https://www.leejia.me/2018/08/30/cjlfz6hx0000cfttj2e8teu21/"/>
-    <id>https://www.leejia.me/2018/08/30/cjlfz6hx0000cfttj2e8teu21/</id>
+    <link href="https://www.leejia.me/2018/08/30/cjlg3gxe2000gyqtjiq9hnlda/"/>
+    <id>https://www.leejia.me/2018/08/30/cjlg3gxe2000gyqtjiq9hnlda/</id>
     <published>2018-08-30T02:47:00.000Z</published>
     <updated>2018-08-30T02:47:00.000Z</updated>
     
@@ -48,8 +62,8 @@
   
   <entry>
     <title>centos下启动flask程序</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwo0002fttj1aswvazw/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfz6hwo0002fttj1aswvazw/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlg3gxdm0002yqtj4e3hzzrk/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlg3gxdm0002yqtj4e3hzzrk/</id>
     <published>2018-08-29T06:49:24.000Z</published>
     <updated>2018-08-29T06:49:24.000Z</updated>
     
@@ -75,8 +89,8 @@
   
   <entry>
     <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwz000bfttj8ksx4z7x/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfz6hwz000bfttj8ksx4z7x/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlg3gxdy000cyqtj447p2gej/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlg3gxdy000cyqtj447p2gej/</id>
     <published>2018-08-29T01:50:19.000Z</published>
     <updated>2018-08-29T07:51:54.988Z</updated>
     
@@ -102,8 +116,8 @@
   
   <entry>
     <title>关于centos操作系统安装MySQL-python失败的解决方案</title>
-    <link href="https://www.leejia.me/2018/08/29/cjlfz6hwx0008fttjsj9avfmw/"/>
-    <id>https://www.leejia.me/2018/08/29/cjlfz6hwx0008fttjsj9avfmw/</id>
+    <link href="https://www.leejia.me/2018/08/29/cjlg3gxdx000byqtjspp7lb4e/"/>
+    <id>https://www.leejia.me/2018/08/29/cjlg3gxdx000byqtjspp7lb4e/</id>
     <published>2018-08-29T01:42:03.000Z</published>
     <updated>2018-08-29T15:30:45.812Z</updated>
     
@@ -132,8 +146,8 @@
   
   <entry>
     <title>blog.md</title>
-    <link href="https://www.leejia.me/2018/08/24/cjlfz6hwk0000fttjxmc3y9ow/"/>
-    <id>https://www.leejia.me/2018/08/24/cjlfz6hwk0000fttjxmc3y9ow/</id>
+    <link href="https://www.leejia.me/2018/08/24/cjlg3gxdi0000yqtjsq39v38y/"/>
+    <id>https://www.leejia.me/2018/08/24/cjlg3gxdi0000yqtjsq39v38y/</id>
     <published>2018-08-24T15:40:44.000Z</published>
     <updated>2018-08-24T15:43:16.324Z</updated>
     
@@ -154,8 +168,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfz6hwv0006fttj93c786lf/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfz6hwv0006fttj93c786lf/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlg3gxdr0006yqtjwt0dqvxe/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlg3gxdr0006yqtjwt0dqvxe/</id>
     <published>2018-08-16T05:11:42.000Z</published>
     <updated>2018-08-29T07:04:24.701Z</updated>
     
@@ -186,8 +200,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfz6hww0007fttj9o1oz8yq/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfz6hww0007fttj9o1oz8yq/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlg3gxds0007yqtjeivty9i3/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlg3gxds0007yqtjeivty9i3/</id>
     <published>2018-08-16T05:04:29.784Z</published>
     <updated>2018-08-29T07:19:14.343Z</updated>
     
@@ -207,8 +221,8 @@
   
   <entry>
     <title>git基本命令</title>
-    <link href="https://www.leejia.me/2018/08/16/cjlfz6hwq0003fttj3oacsy4d/"/>
-    <id>https://www.leejia.me/2018/08/16/cjlfz6hwq0003fttj3oacsy4d/</id>
+    <link href="https://www.leejia.me/2018/08/16/cjlg3gxdo0003yqtjuyvlgnqz/"/>
+    <id>https://www.leejia.me/2018/08/16/cjlg3gxdo0003yqtjuyvlgnqz/</id>
     <published>2018-08-16T04:56:12.000Z</published>
     <updated>2018-08-29T07:04:19.202Z</updated>
     
