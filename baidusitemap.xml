@@ -4,8 +4,8 @@
 
     
   <url>
-    <loc>https://www.leejia.me/2018/08/30/cjlg4q3yi0000kqtj19ygkun0/</loc>
-    <lastmod>2018-08-30T04:57:41.000Z</lastmod>
+    <loc>https://www.leejia.me/virtualenv/mkvirtualenv-stevedore-error.html</loc>
+    <lastmod>2018-08-30T10:53:35.123Z</lastmod>
     <data>
         <display>
         <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
@@ -18,7 +18,7 @@
          
            
              
-              <breadCrumb title="虚拟环境" url="https://www.leejia.me/categories/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+              <breadCrumb title="virtualenv" url="https://www.leejia.me/categories/virtualenv/"/>
           
         </display>
     </data>
@@ -26,31 +26,92 @@
 
     
   <url>
-    <loc>https://www.leejia.me/2018/08/30/cjlg4jzus000cuatjgmjdokh2/</loc>
-    <lastmod>2018-08-30T02:47:00.000Z</lastmod>
+    <loc>https://www.leejia.me/flask/centos-start-flask.html</loc>
+    <lastmod>2018-08-30T10:53:09.216Z</lastmod>
     <data>
         <display>
-        <title>最简单的django程序</title>
-        <pubTime>2018-08-30T02:47:00.000Z</pubTime>
+        <title>centos下启动flask程序</title>
+        <pubTime>2018-08-29T06:49:24.000Z</pubTime>
         
-        <tag>django</tag>
+        <tag>flask</tag>
          
-        <tag>python</tag>
+        <tag>ngnix</tag>
          
          
            
              
-              <breadCrumb title="django" url="https://www.leejia.me/categories/django/"/>
+              <breadCrumb title="flask" url="https://www.leejia.me/categories/flask/"/>
           
         </display>
     </data>
     </url>
 
     
+  <url>
+    <loc>https://www.leejia.me/git/git.html</loc>
+    <lastmod>2018-08-30T10:52:45.366Z</lastmod>
+    <data>
+        <display>
+        <title>git基本命令</title>
+        <pubTime>2018-08-16T04:56:12.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="https://www.leejia.me/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
-    <loc>https://www.leejia.me/2018/08/29/cjlg4jzuo0008uatjj6tif04u/</loc>
-    <lastmod>2018-08-29T15:30:45.812Z</lastmod>
+    <loc>https://www.leejia.me/life/hello-world.html</loc>
+    <lastmod>2018-08-30T10:52:34.209Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-08-16T05:04:29.784Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/flask/mysqlclientpython.html</loc>
+    <lastmod>2018-08-30T10:50:54.923Z</lastmod>
+    <data>
+        <display>
+        <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
+        <pubTime>2018-08-29T01:50:19.000Z</pubTime>
+        
+        <tag>flask</tag>
+         
+        <tag>mysqlclient</tag>
+         
+         
+           
+             
+              <breadCrumb title="flask" url="https://www.leejia.me/categories/flask/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/flask/centos-have-no-mysql.html</loc>
+    <lastmod>2018-08-30T10:50:39.476Z</lastmod>
     <data>
         <display>
         <title>关于centos操作系统安装MySQL-python失败的解决方案</title>
@@ -73,102 +134,21 @@
 
     
   <url>
-    <loc>https://www.leejia.me/2018/08/29/cjlg4jzuq000buatj1iqcw5pr/</loc>
-    <lastmod>2018-08-29T07:51:54.988Z</lastmod>
+    <loc>https://www.leejia.me/django/tiny-django-app.html</loc>
+    <lastmod>2018-08-30T02:47:00.000Z</lastmod>
     <data>
         <display>
-        <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-        <pubTime>2018-08-29T01:50:19.000Z</pubTime>
+        <title>最简单的django程序</title>
+        <pubTime>2018-08-30T02:47:00.000Z</pubTime>
         
-        <tag>flask</tag>
+        <tag>django</tag>
          
-        <tag>mysqlclient</tag>
+        <tag>python</tag>
          
          
            
              
-              <breadCrumb title="flask" url="https://www.leejia.me/categories/flask/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/2018/08/16/cjlg4jzun0007uatjbvupcso9/</loc>
-    <lastmod>2018-08-29T07:19:14.343Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-08-16T05:04:29.784Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/2018/08/16/cjlg4jzum0006uatj5bnga7e1/</loc>
-    <lastmod>2018-08-29T07:04:24.701Z</lastmod>
-    <data>
-        <display>
-        <title>git基本命令</title>
-        <pubTime>2018-08-16T05:11:42.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="https://www.leejia.me/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/2018/08/16/cjlg4jzuh0003uatj6r1djfwh/</loc>
-    <lastmod>2018-08-29T07:04:19.202Z</lastmod>
-    <data>
-        <display>
-        <title>git基本命令</title>
-        <pubTime>2018-08-16T04:56:12.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="https://www.leejia.me/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/2018/08/29/cjlg4jzud0002uatjxs3ovrmg/</loc>
-    <lastmod>2018-08-29T06:49:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>centos下启动flask程序</title>
-        <pubTime>2018-08-29T06:49:24.000Z</pubTime>
-        
-        <tag>flask</tag>
-         
-        <tag>ngnix</tag>
-         
-         
-           
-             
-              <breadCrumb title="flask" url="https://www.leejia.me/categories/flask/"/>
+              <breadCrumb title="django" url="https://www.leejia.me/categories/django/"/>
           
         </display>
     </data>
@@ -176,18 +156,4 @@
 
     
     
-  <url>
-    <loc>https://www.leejia.me/2018/08/24/cjlg4jzte0000uatj335q5k5h/</loc>
-    <lastmod>2018-08-24T15:43:16.324Z</lastmod>
-    <data>
-        <display>
-        <title>blog.md</title>
-        <pubTime>2018-08-24T15:40:44.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>
