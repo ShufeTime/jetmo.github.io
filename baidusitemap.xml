@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>https://www.leejia.me/Django/DJango-classView.html</loc>
-    <lastmod>2018-09-01T04:29:30.762Z</lastmod>
+    <loc>https://www.leejia.me/django/django-classView.html</loc>
+    <lastmod>2018-09-01T05:25:23.227Z</lastmod>
     <data>
         <display>
         <title>Django开发之类视图</title>
         <pubTime>2018-09-01T04:28:08.000Z</pubTime>
         
-        <tag>Django</tag>
+        <tag>django</tag>
          
         <tag>类视图</tag>
          
@@ -22,7 +22,7 @@
          
            
              
-              <breadCrumb title="Django" url="https://www.leejia.me/categories/Django/"/>
+              <breadCrumb title="django" url="https://www.leejia.me/categories/django/"/>
           
         </display>
     </data>
