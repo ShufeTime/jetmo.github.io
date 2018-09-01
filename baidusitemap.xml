@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://www.leejia.me/Django/DJango-classView.html</loc>
+    <lastmod>2018-09-01T04:29:30.762Z</lastmod>
+    <data>
+        <display>
+        <title>Django开发之类视图</title>
+        <pubTime>2018-09-01T04:28:08.000Z</pubTime>
+        
+        <tag>Django</tag>
+         
+        <tag>类视图</tag>
+         
+        <tag>装饰器</tag>
+         
+        <tag>as_view()</tag>
+         
+         
+           
+             
+              <breadCrumb title="Django" url="https://www.leejia.me/categories/Django/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.leejia.me/virtualenv/mkvirtualenv-stevedore-error.html</loc>
     <lastmod>2018-08-30T10:53:35.123Z</lastmod>
     <data>
