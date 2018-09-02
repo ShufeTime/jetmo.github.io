@@ -155,9 +155,9 @@
       <category term="flask" scheme="https://www.leejia.me/categories/flask/"/>
     
     
-      <category term="flask" scheme="https://www.leejia.me/tags/flask/"/>
-    
       <category term="mysqlclient" scheme="https://www.leejia.me/tags/mysqlclient/"/>
+    
+      <category term="flask" scheme="https://www.leejia.me/tags/flask/"/>
     
   </entry>
   

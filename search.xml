@@ -113,9 +113,9 @@
       
         <tags>
             
-            <tag> flask </tag>
-            
             <tag> mysqlclient </tag>
+            
+            <tag> flask </tag>
             
         </tags>
       
