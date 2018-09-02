@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://www.leejia.me/django/django-classView.html</loc>
-    <lastmod>2018-09-01T05:25:23.227Z</lastmod>
+    <lastmod>2018-09-02T05:16:13.377Z</lastmod>
     <data>
         <display>
         <title>Django开发之类视图</title>
@@ -17,7 +17,7 @@
          
         <tag>装饰器</tag>
          
-        <tag>as_view()</tag>
+        <tag>as_view</tag>
          
          
            
