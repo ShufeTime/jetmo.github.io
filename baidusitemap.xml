@@ -121,9 +121,9 @@
         <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
         <pubTime>2018-08-29T01:50:19.000Z</pubTime>
         
-        <tag>mysqlclient</tag>
-         
         <tag>flask</tag>
+         
+        <tag>mysqlclient</tag>
          
          
            
