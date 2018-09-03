@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/django/xuliehua_fanxuliehua.html</loc>
+    
+    <lastmod>2018-09-03T07:22:06.116Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/django/django_classView_decorator.html</loc>
     
     <lastmod>2018-09-02T06:24:17.896Z</lastmod>

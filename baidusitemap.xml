@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://www.leejia.me/django/xuliehua_fanxuliehua.html</loc>
+    <lastmod>2018-09-03T07:22:06.116Z</lastmod>
+    <data>
+        <display>
+        <title>序列化和反序列化的底层实现原理是什么？</title>
+        <pubTime>2018-09-03T07:14:10.000Z</pubTime>
+        
+        <tag>序列化</tag>
+         
+        <tag>反序列化</tag>
+         
+        <tag>传输</tag>
+         
+         
+           
+             
+              <breadCrumb title="django" url="https://www.leejia.me/categories/django/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.leejia.me/django/django_classView_decorator.html</loc>
     <lastmod>2018-09-02T06:24:17.896Z</lastmod>
     <data>
