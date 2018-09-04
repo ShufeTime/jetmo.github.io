@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-03T08:19:58.420Z</updated>
+  <updated>2018-09-04T01:28:32.993Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中url编解码问题</title>
+    <link href="https://www.leejia.me/python/python_url_decode_encode.html"/>
+    <id>https://www.leejia.me/python/python_url_decode_encode.html</id>
+    <published>2018-09-04T01:22:05.000Z</published>
+    <updated>2018-09-04T01:28:32.993Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="普通字符串的处理"><a href="#普通字符串的处理" class="headerlink" title="普通字符串的处理"></a>普通字符串的处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line">str1 = <span class="string">'haha哈哈'</span></span><br><span class="line">str2 = parse.quote(str1)   <span class="comment">#quote()将字符串进行编码</span></span><br><span class="line">print(str2)                <span class="comment">#str2=haha%E5%93%88%E5%93%88</span></span><br><span class="line">str3 = parse.unquote(str2) <span class="comment">#解码字符串</span></span><br><span class="line">print(str3)                <span class="comment">#str3=haha哈哈</span></span><br></pre></td></tr></table></figure><h2 id="url的处理"><a href="#url的处理" class="headerlink" title="url的处理"></a>url的处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://www.baidu.com/s?'</span></span><br><span class="line">dict1 =&#123;<span class="string">'wd'</span>: <span class="string">'百度翻译'</span>&#125;</span><br><span class="line">url_data = parse.urlencode(dict1) <span class="comment">#unlencode()将字典&#123;k1:v1,k2:v2&#125;转化为k1=v1&amp;k2=v2</span></span><br><span class="line">print(url_data)             <span class="comment">#url_data：wd=%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91</span></span><br><span class="line"></span><br><span class="line">data = requests.get((url+url_data)).text <span class="comment">#读取url响应结果</span></span><br><span class="line">data = data.decode(<span class="string">'utf-8'</span>) <span class="comment">#将响应结果用utf8编码</span></span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">url_org = parse.unquote(url_data) <span class="comment">#解码url</span></span><br><span class="line">print(url_org)              <span class="comment">#url_org：wd=百度翻译</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;普通字符串的处理&quot;&gt;&lt;a href=&quot;#普通字符串的处理&quot; class=&quot;headerlink&quot; title=&quot;普通字符串的处理&quot;&gt;&lt;/a&gt;普通字符串的处理&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://www.leejia.me/categories/python/"/>
+    
+    
+      <category term="unquote" scheme="https://www.leejia.me/tags/unquote/"/>
+    
+      <category term="quote" scheme="https://www.leejia.me/tags/quote/"/>
+    
+  </entry>
   
   <entry>
     <title>json和xml互转</title>
