@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-04T01:28:32.993Z</updated>
+  <updated>2018-09-05T01:01:53.989Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时间戳转换的几种方法</title>
+    <link href="https://www.leejia.me/python/timestamp.html"/>
+    <id>https://www.leejia.me/python/timestamp.html</id>
+    <published>2018-09-05T00:49:57.000Z</published>
+    <updated>2018-09-05T01:01:53.989Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一种</span></span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">timestamp = <span class="number">1536108815</span>  <span class="comment"># 如果是从网页解析出来的是字符串,需要转int</span></span><br><span class="line">dateArray = datetime.datetime.utcfromtimestamp(int(timestamp))</span><br><span class="line">styletime = dateArray.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line">prtint(styletime)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二种</span></span><br><span class="line">ts = <span class="number">1515774430</span></span><br><span class="line">dt = time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, time.localtime(ts))</span><br><span class="line">print(dt)</span><br></pre></td></tr></table></figure><h2 id="获取时间戳"><a href="#获取时间戳" class="headerlink" title="获取时间戳"></a>获取时间戳</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">t = time.time()</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure><h2 id="转时间戳"><a href="#转时间戳" class="headerlink" title="转时间戳"></a>转时间戳</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dt = <span class="string">'2018-02-01 02:40:30'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 先把日期字符串转为 日期对象,然后再把日期对象转为时间戳</span></span><br><span class="line">ts = int(time.mktime(time.strptime(dt, <span class="string">"%Y-%m-%d %H:%M:%S"</span>)))</span><br><span class="line"><span class="keyword">print</span> (ts)</span><br></pre></td></tr></table></figure><blockquote><p>获取时间,获取时间戳,时间戳转化,python提供很多模块,可以多google.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;格式化&quot;&gt;&lt;a href=&quot;#格式化&quot; class=&quot;headerlink&quot; title=&quot;格式化&quot;&gt;&lt;/a&gt;格式化&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://www.leejia.me/categories/python/"/>
+    
+    
+      <category term="时间戳" scheme="https://www.leejia.me/tags/%E6%97%B6%E9%97%B4%E6%88%B3/"/>
+    
+      <category term="timetamp" scheme="https://www.leejia.me/tags/timetamp/"/>
+    
+      <category term="datetime" scheme="https://www.leejia.me/tags/datetime/"/>
+    
+      <category term="time" scheme="https://www.leejia.me/tags/time/"/>
+    
+  </entry>
   
   <entry>
     <title>python中url编解码问题</title>
