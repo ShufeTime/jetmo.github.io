@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/django/django_rest_framework_get_seriazlier.html</loc>
+    
+    <lastmod>2018-09-09T07:42:53.225Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/python/timestamp.html</loc>
     
     <lastmod>2018-09-05T01:01:53.989Z</lastmod>
