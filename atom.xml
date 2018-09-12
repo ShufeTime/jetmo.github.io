@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-12T12:19:41.640Z</updated>
+  <updated>2018-09-12T12:23:31.322Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.leejia.me/life/fing_bug.html"/>
     <id>https://www.leejia.me/life/fing_bug.html</id>
     <published>2018-09-12T12:16:31.000Z</published>
-    <updated>2018-09-12T12:19:41.640Z</updated>
+    <updated>2018-09-12T12:23:31.322Z</updated>
     
-    <content type="html"><![CDATA[<p>开发中出现BUG是非常正常是事情,找BUG也是一件非常爽的过程~</p><p>流程: </p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>开发中出现BUG是非常正常是事情,找BUG也是一件非常爽的过程~</p><p>流程: </p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul><p>今天在开发django找回密码的功能.在进入修改密码页面之前需要针对当前用户生成access_token.错误的把JTF的接口调用过来了……</p><p>打断点排查顺利解决~</p>]]></content>
     
     <summary type="html">
     
@@ -37,7 +37,7 @@
 &lt;li&gt;看源码&lt;/li&gt;
 &lt;li&gt;实现不行再csdn,google…..&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;p&gt;今
       
     
     </summary>
