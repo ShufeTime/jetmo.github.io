@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://www.leejia.me/life/fing_bug.html</loc>
+    <lastmod>2018-09-12T12:19:41.640Z</lastmod>
+    <data>
+        <display>
+        <title>找BUG事件快乐的事情</title>
+        <pubTime>2018-09-12T12:16:31.000Z</pubTime>
+        
+        <tag>bug</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.leejia.me/django/django_logging_error.html</loc>
     <lastmod>2018-09-09T12:45:37.405Z</lastmod>
     <data>

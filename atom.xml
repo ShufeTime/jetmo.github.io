@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-09T12:45:37.405Z</updated>
+  <updated>2018-09-12T12:19:41.640Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>找BUG事件快乐的事情</title>
+    <link href="https://www.leejia.me/life/fing_bug.html"/>
+    <id>https://www.leejia.me/life/fing_bug.html</id>
+    <published>2018-09-12T12:16:31.000Z</published>
+    <updated>2018-09-12T12:19:41.640Z</updated>
+    
+    <content type="html"><![CDATA[<p>开发中出现BUG是非常正常是事情,找BUG也是一件非常爽的过程~</p><p>流程: </p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;开发中出现BUG是非常正常是事情,找BUG也是一件非常爽的过程~&lt;/p&gt;
+&lt;p&gt;流程: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;打开QQ音乐&lt;/li&gt;
+&lt;li&gt;打断点调试&lt;/li&gt;
+&lt;li&gt;看源码&lt;/li&gt;
+&lt;li&gt;实现不行再csdn,google…..&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+      <category term="life" scheme="https://www.leejia.me/categories/life/"/>
+    
+    
+      <category term="bug" scheme="https://www.leejia.me/tags/bug/"/>
+    
+  </entry>
   
   <entry>
     <title>mac系统下django日志如有中文报错的解决方法</title>

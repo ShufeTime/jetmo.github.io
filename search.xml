@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>找BUG事件快乐的事情</title>
+      <link href="/life/fing_bug.html"/>
+      <url>/life/fing_bug.html</url>
+      <content type="html"><![CDATA[<p>开发中出现BUG是非常正常是事情,找BUG也是一件非常爽的过程~</p><p>流程: </p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul>]]></content>
+      
+      <categories>
+          
+          <category> life </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bug </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>mac系统下django日志如有中文报错的解决方法</title>
       <link href="/django/django_logging_error.html"/>
       <url>/django/django_logging_error.html</url>
