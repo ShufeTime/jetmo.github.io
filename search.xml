@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>开发记录之django框架数据库迁移</title>
+      <link href="/django/djang_migrate_dababase.html"/>
+      <url>/django/djang_migrate_dababase.html</url>
+      <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>今天新建了一个数据库模型, 但是却怎么也迁移不成功.显示:没有任何改变..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">No changes detected</span><br></pre></td></tr></table></figure></p><p>后来忽然想到一个问题: 我只是建立了数据模型,但是并没有个和django框架本身建立联系.<br>很显然我没有注册app….<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line">    <span class="string">'areas.apps.AreasConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>注册后再执行果然妥妥的成功了~~~<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'areas'</span>:</span><br><span class="line">  shops/apps/areas/migrations/<span class="number">0001</span>_initial.py</span><br><span class="line">    - Create model Area</span><br><span class="line">(shops_py3) ➜  shops git:(dev) ✗  python manage migrate</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>开发一定要心细. 细节问题不能出错…因为真的很难排查…</p>]]></content>
+      
+      <categories>
+          
+          <category> django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> migrate </tag>
+            
+            <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>关于开发过程的感受</title>
       <link href="/life/develop_and_think.html"/>
       <url>/life/develop_and_think.html</url>
