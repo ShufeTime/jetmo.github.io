@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/it/install_docker_and_use.html</loc>
+    
+    <lastmod>2018-09-16T12:25:17.643Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/django/djang_migrate_dababase.html</loc>
     
     <lastmod>2018-09-16T02:53:29.300Z</lastmod>
