@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-17T02:27:37.376Z</updated>
+  <updated>2018-09-17T05:16:57.181Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>定制mac终端欢迎页</title>
+    <link href="https://www.leejia.me/code/diy_your_terminal.html"/>
+    <id>https://www.leejia.me/code/diy_your_terminal.html</id>
+    <published>2018-09-17T05:10:20.000Z</published>
+    <updated>2018-09-17T05:16:57.181Z</updated>
+    
+    <content type="html"><![CDATA[<p>mac上无论是npm、git还是Jekyll都会用到终端，虽然坑多，但折腾不止！遂苦中作乐。</p><h2 id="配置步骤"><a href="#配置步骤" class="headerlink" title="配置步骤"></a>配置步骤</h2><ul><li><p>快捷键control+space唤出Spotlight，搜索terminal打开终端　</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc <span class="comment">#进入目录</span></span><br><span class="line">sudo pico motd  <span class="comment">#输入密码后进入修改页面</span></span><br></pre></td></tr></table></figure></li><li><p>粘贴内容如下</p><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">                   <span class="variable">_ooOoo_</span></span><br><span class="line">                  o8888888o</span><br><span class="line">                  <span class="number">88</span><span class="string">" . "</span><span class="number">88</span></span><br><span class="line">                  (| -_- |)</span><br><span class="line">                  O\  =  /O</span><br><span class="line">               <span class="variable">____</span>/`---<span class="string">'\____</span></span><br><span class="line"><span class="string">             .'</span>  \\|     |<span class="comment">//  `.</span></span><br><span class="line">            /  \\|||  :  |||<span class="comment">//  \</span></span><br><span class="line">           /  _||||| -:- |||||-  \</span><br><span class="line">           |   | \\\  -  <span class="comment">/// |   |</span></span><br><span class="line">           | \_|  <span class="string">''</span>\---/<span class="string">''</span>  |   |</span><br><span class="line">           \  .-\<span class="variable">__</span>  `-`  <span class="variable">___</span>/-. /</span><br><span class="line">         <span class="variable">___</span>`. .<span class="string">'  /--.--\  `. . __</span></span><br><span class="line"><span class="string">      ."" '</span>&lt;  `.<span class="variable">___</span>\_&lt;|&gt;_/<span class="variable">___</span>.<span class="string">'  &gt;'</span><span class="string">""</span>.</span><br><span class="line">     | | :  `- \`.;`\ _ /`;.`/ - ` : | |</span><br><span class="line">     \  \ `-.   \_ <span class="variable">__</span>\ /<span class="variable">__</span> _/   .-` /  /</span><br><span class="line">======`-.<span class="variable">____</span>`-.<span class="variable">___</span>\<span class="variable">_____</span>/<span class="variable">___</span>.-`<span class="variable">____</span>.-<span class="string">'======</span></span><br><span class="line"><span class="string">                   `=---='</span></span><br><span class="line"></span><br><span class="line">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">           佛祖保佑  🙏   永无BUG</span><br></pre></td></tr></table></figure></li><li><p>保存:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">control + X 然后输入y  然后可能需要你输入保存的文件名</span><br><span class="line">填写motd</span><br></pre></td></tr></table></figure></li><li><p>重启终端看效果吧.<br>自带的tetminal和iterm都可以看到效果.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;mac上无论是npm、git还是Jekyll都会用到终端，虽然坑多，但折腾不止！遂苦中作乐。&lt;/p&gt;
+&lt;h2 id=&quot;配置步骤&quot;&gt;&lt;a href=&quot;#配置步骤&quot; class=&quot;headerlink&quot; title=&quot;配置步骤&quot;&gt;&lt;/a&gt;配置步骤&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://www.leejia.me/categories/code/"/>
+    
+    
+      <category term="terminal" scheme="https://www.leejia.me/tags/terminal/"/>
+    
+      <category term="mac" scheme="https://www.leejia.me/tags/mac/"/>
+    
+      <category term="终端" scheme="https://www.leejia.me/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>docker安装和使用</title>
