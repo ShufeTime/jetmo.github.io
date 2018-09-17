@@ -4,8 +4,154 @@
 
     
   <url>
-    <loc>https://www.leejia.me/it/install_docker_and_use.html</loc>
-    <lastmod>2018-09-16T12:28:49.104Z</lastmod>
+    <loc>https://www.leejia.me/code/fing_bug.html</loc>
+    <lastmod>2018-09-17T02:29:04.032Z</lastmod>
+    <data>
+        <display>
+        <title>找BUG事件快乐的事情</title>
+        <pubTime>2018-09-12T12:16:31.000Z</pubTime>
+        
+        <tag>bug</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/develop_and_think.html</loc>
+    <lastmod>2018-09-17T02:28:44.793Z</lastmod>
+    <data>
+        <display>
+        <title>关于开发过程的感受</title>
+        <pubTime>2018-09-15T13:02:53.000Z</pubTime>
+        
+        <tag>感受</tag>
+         
+        <tag>源码</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/mkvirtualenv-stevedore-error.html</loc>
+    <lastmod>2018-09-17T02:28:26.209Z</lastmod>
+    <data>
+        <display>
+        <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
+        <pubTime>2018-08-30T04:57:41.000Z</pubTime>
+        
+        <tag>stevedore</tag>
+         
+        <tag>virtualenv</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/life/xcrun_error.html</loc>
+    <lastmod>2018-09-17T02:28:17.395Z</lastmod>
+    <data>
+        <display>
+        <title>mac升级系统后出现xcrun error解决办法</title>
+        <pubTime>2018-09-15T06:12:50.000Z</pubTime>
+        
+        <tag>code</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/json2xml_xml2json.html</loc>
+    <lastmod>2018-09-17T02:28:11.880Z</lastmod>
+    <data>
+        <display>
+        <title>json和xml互转</title>
+        <pubTime>2018-09-03T08:15:06.000Z</pubTime>
+        
+        <tag>json</tag>
+         
+        <tag>xml</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/hello-world.html</loc>
+    <lastmod>2018-09-17T02:28:01.076Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-08-16T05:04:29.784Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/git.html</loc>
+    <lastmod>2018-09-17T02:27:50.815Z</lastmod>
+    <data>
+        <display>
+        <title>git基本命令</title>
+        <pubTime>2018-08-16T04:56:12.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://www.leejia.me/code/install_docker_and_use.html</loc>
+    <lastmod>2018-09-17T02:27:37.376Z</lastmod>
     <data>
         <display>
         <title>docker安装和使用</title>
@@ -16,7 +162,7 @@
          
            
              
-              <breadCrumb title="it" url="https://www.leejia.me/categories/it/"/>
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
           
         </display>
     </data>
@@ -39,68 +185,6 @@
            
              
               <breadCrumb title="django" url="https://www.leejia.me/categories/django/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/life/develop_and_think.html</loc>
-    <lastmod>2018-09-15T13:04:33.359Z</lastmod>
-    <data>
-        <display>
-        <title>关于开发过程的感受</title>
-        <pubTime>2018-09-15T13:02:53.000Z</pubTime>
-        
-        <tag>感受</tag>
-         
-        <tag>源码</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/life/xcrun_error.html</loc>
-    <lastmod>2018-09-15T06:18:19.357Z</lastmod>
-    <data>
-        <display>
-        <title>mac升级系统后出现xcrun error解决办法</title>
-        <pubTime>2018-09-15T06:12:50.000Z</pubTime>
-        
-        <tag>bug</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/life/fing_bug.html</loc>
-    <lastmod>2018-09-12T12:23:31.322Z</lastmod>
-    <data>
-        <display>
-        <title>找BUG事件快乐的事情</title>
-        <pubTime>2018-09-12T12:16:31.000Z</pubTime>
-        
-        <tag>bug</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
           
         </display>
     </data>
@@ -200,28 +284,6 @@
 
     
   <url>
-    <loc>https://www.leejia.me/tools/json2xml_xml2json.html</loc>
-    <lastmod>2018-09-03T08:19:58.420Z</lastmod>
-    <data>
-        <display>
-        <title>json和xml互转</title>
-        <pubTime>2018-09-03T08:15:06.000Z</pubTime>
-        
-        <tag>json</tag>
-         
-        <tag>xml</tag>
-         
-         
-           
-             
-              <breadCrumb title="tools" url="https://www.leejia.me/categories/tools/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.leejia.me/django/xuliehua_fanxuliehua.html</loc>
     <lastmod>2018-09-03T07:22:06.116Z</lastmod>
     <data>
@@ -272,28 +334,6 @@
 
     
   <url>
-    <loc>https://www.leejia.me/virtualenv/mkvirtualenv-stevedore-error.html</loc>
-    <lastmod>2018-08-30T10:53:35.123Z</lastmod>
-    <data>
-        <display>
-        <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
-        <pubTime>2018-08-30T04:57:41.000Z</pubTime>
-        
-        <tag>stevedore</tag>
-         
-        <tag>virtualenv</tag>
-         
-         
-           
-             
-              <breadCrumb title="virtualenv" url="https://www.leejia.me/categories/virtualenv/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://www.leejia.me/flask/centos-start-flask.html</loc>
     <lastmod>2018-08-30T10:53:09.216Z</lastmod>
     <data>
@@ -309,46 +349,6 @@
            
              
               <breadCrumb title="flask" url="https://www.leejia.me/categories/flask/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/git/git.html</loc>
-    <lastmod>2018-08-30T10:52:45.366Z</lastmod>
-    <data>
-        <display>
-        <title>git基本命令</title>
-        <pubTime>2018-08-16T04:56:12.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-        <tag>github</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="https://www.leejia.me/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://www.leejia.me/life/hello-world.html</loc>
-    <lastmod>2018-08-30T10:52:34.209Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-08-16T05:04:29.784Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="life" url="https://www.leejia.me/categories/life/"/>
           
         </display>
     </data>
