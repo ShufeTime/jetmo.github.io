@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/code/xcrun_error.html</loc>
+    
+    <lastmod>2018-09-17T02:31:52.004Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/code/fing_bug.html</loc>
     
     <lastmod>2018-09-17T02:29:04.032Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://www.leejia.me/code/mkvirtualenv-stevedore-error.html</loc>
     
     <lastmod>2018-09-17T02:28:26.209Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/life/xcrun_error.html</loc>
-    
-    <lastmod>2018-09-17T02:28:17.395Z</lastmod>
     
   </url>
   

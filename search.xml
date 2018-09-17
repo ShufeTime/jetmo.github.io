@@ -71,18 +71,20 @@
     
     <entry>
       <title>mac升级系统后出现xcrun error解决办法</title>
-      <link href="/life/xcrun_error.html"/>
-      <url>/life/xcrun_error.html</url>
+      <link href="/code/xcrun_error.html"/>
+      <url>/code/xcrun_error.html</url>
       <content type="html"><![CDATA[<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</span><br></pre></td></tr></table></figure><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>]]></content>
       
       <categories>
           
-          <category> life </category>
+          <category> code </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> xcrun </tag>
             
             <tag> code </tag>
             
