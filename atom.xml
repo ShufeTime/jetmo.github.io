@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-17T05:16:57.181Z</updated>
+  <updated>2018-09-18T02:23:11.810Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于ubuntu清理垃圾</title>
+    <link href="https://www.leejia.me/code/clean_your_ubuntu.html"/>
+    <id>https://www.leejia.me/code/clean_your_ubuntu.html</id>
+    <published>2018-09-18T02:18:14.000Z</published>
+    <updated>2018-09-18T02:23:11.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>MBP上安装了ubuntu16.04虚拟机,随着使用时间越长, 导致缓存,无效的配置文件等占用空间特别的大.目前有22G多.于是在网上找了一个清理方法.</p><blockquote><p>&lt;Leeja: 教程摘自互联网..&gt;<br>Ubuntu Linux与Windows系统不同，Ubuntu Linux不会产生无用垃圾文件，但是在升级缓存中，Ubuntu Linux不会自动删除这些文件，今天就来说说这些垃圾文件清理方法。</p></blockquote><h2 id="非常有用的清理命令："><a href="#非常有用的清理命令：" class="headerlink" title="非常有用的清理命令："></a>非常有用的清理命令：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoclean <span class="comment"># --清理旧版本的软件缓存 OK(已经卸载掉的软件包)</span></span><br><span class="line">sudo apt-get clean  <span class="comment"># --清理所有软件缓存 OK(电脑上存储的安装包)</span></span><br><span class="line">sudo apt-get autoremove  <span class="comment"># --删除系统不再使用的孤立软件 OK</span></span><br><span class="line">(已经卸载了，但是一些只有它依赖而别的软件包都不需要的软件包)</span><br></pre></td></tr></table></figure><p>这三个命令主要清理升级缓存以及无用包的。</p><h2 id="清理Linux下孤立的包："><a href="#清理Linux下孤立的包：" class="headerlink" title="清理Linux下孤立的包："></a>清理Linux下孤立的包：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">图形界面下我们可以用：gtkorphan</span><br><span class="line">sudo apt-get install gtkorphan -y</span><br><span class="line">终端命令下我们可以用：deborphan</span><br><span class="line">sudo apt-get install deborphan -y</span><br></pre></td></tr></table></figure><h2 id="删除多余的内核-在1中已清理"><a href="#删除多余的内核-在1中已清理" class="headerlink" title="删除多余的内核(在1中已清理)"></a>删除多余的内核(在1中已清理)</h2><p>(在终端中输入uname -a，然后看其显示的现用内核版本是多少)<br>(不删除掉老的内核，以便于使用新升级的内核无法启动时，你能马上使用老内核进行启动，不至于导致你无法进入系统的悲剧。不过在你升级完毕，重启后能进入系统后，说明新内核已经很好的兼容了你的电脑，那么你就可以放心大胆的删除掉老内核)</p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>包管理的临时文件目录:<br>包在 /var/cache/apt/archives<br>没有下载完的在 /var/cache/apt/archives/partial</p><p>在卸载软件的时候，尽可能使用sudo apt-get purge xxxxx（xxxx为要卸载的软件名），这样可以将软件以及它的配置文件均卸载干净。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;MBP上安装了ubuntu16.04虚拟机,随着使用时间越长, 导致缓存,无效的配置文件等占用空间特别的大.目前有22G多.于是在网上找了一个清理方法.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;lt;Leeja: 教程摘自互联网..&amp;gt;&lt;br&gt;Ubuntu Linux
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://www.leejia.me/categories/code/"/>
+    
+    
+      <category term="ubuntu" scheme="https://www.leejia.me/tags/ubuntu/"/>
+    
+      <category term="mac" scheme="https://www.leejia.me/tags/mac/"/>
+    
+      <category term="clean" scheme="https://www.leejia.me/tags/clean/"/>
+    
+      <category term="垃圾" scheme="https://www.leejia.me/tags/%E5%9E%83%E5%9C%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>定制mac终端欢迎页</title>
@@ -39,9 +72,9 @@
       <category term="code" scheme="https://www.leejia.me/categories/code/"/>
     
     
-      <category term="terminal" scheme="https://www.leejia.me/tags/terminal/"/>
-    
       <category term="mac" scheme="https://www.leejia.me/tags/mac/"/>
+    
+      <category term="terminal" scheme="https://www.leejia.me/tags/terminal/"/>
     
       <category term="终端" scheme="https://www.leejia.me/tags/%E7%BB%88%E7%AB%AF/"/>
     
@@ -452,7 +485,7 @@
     <published>2018-08-29T06:49:24.000Z</published>
     <updated>2018-08-30T10:53:09.216Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="centos系统下安装ngnix-负责转发"><a href="#centos系统下安装ngnix-负责转发" class="headerlink" title="centos系统下安装ngnix(负责转发)"></a>centos系统下安装ngnix(负责转发)</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> ngnix</span><br></pre></td></tr></table></figure><h4 id="配置ngnix"><a href="#配置ngnix" class="headerlink" title="配置ngnix"></a>配置ngnix</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径: <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果是多台服务器的话，则在此配置，并修改 location 节点下面的 proxy_pass </span></span><br><span class="line"><span class="attribute">upstream</span> flask &#123;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5000</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5001</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">        <span class="comment"># 监听80端口</span></span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">        <span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">                <span class="comment"># 请求转发到gunicorn服务器</span></span><br><span class="line">                <span class="attribute">proxy_pass</span> http://127.0.0.1:5000;</span><br><span class="line">                <span class="comment"># 请求转发到多个gunicorn服务器</span></span><br><span class="line">                <span class="comment"># proxy_pass http://flask;</span></span><br><span class="line">                <span class="comment"># 设置请求头，并将头信息传递给服务器端 </span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">                <span class="comment"># 设置请求头，传递原始请求ip给 gunicorn 服务器</span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="3"><li><p>启动ngnix服务器</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure></li><li><p>python虚拟环境中安装 Gunicorn(wsgi协议的服务器)</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> Gunicorn</span><br></pre></td></tr></table></figure></li><li><p>启动Gunicorn</p></li></ol><ul><li>进入flask程序的启动文件所在文件夹.比如我的启动文件是manage.py<br>那么运行命令就是:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">gunicorn</span> <span class="selector-tag">-w</span> 2 <span class="selector-tag">-b</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:5000</span> <span class="selector-tag">manage</span><span class="selector-pseudo">:app</span> <span class="selector-tag">-D</span> <span class="selector-tag">--reload</span></span><br></pre></td></tr></table></figure></li></ul><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参数含义: -D表示后台运行. <span class="comment">--reload表示重启Gunicorn.已经运行的会重新启动不必要去kill进程.</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h4 id="centos系统下安装ngnix-负责转发"><a href="#centos系统下安装ngnix-负责转发" class="headerlink" title="centos系统下安装ngnix(负责转发)"></a>centos系统下安装ngnix(负责转发)</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> ngnix</span><br></pre></td></tr></table></figure><h4 id="配置ngnix"><a href="#配置ngnix" class="headerlink" title="配置ngnix"></a>配置ngnix</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径: <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果是多台服务器的话，则在此配置，并修改 location 节点下面的 proxy_pass </span></span><br><span class="line"><span class="attribute">upstream</span> flask &#123;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5000</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5001</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">        <span class="comment"># 监听80端口</span></span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">        <span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">                <span class="comment"># 请求转发到gunicorn服务器</span></span><br><span class="line">                <span class="attribute">proxy_pass</span> http://127.0.0.1:5000;</span><br><span class="line">                <span class="comment"># 请求转发到多个gunicorn服务器</span></span><br><span class="line">                <span class="comment"># proxy_pass http://flask;</span></span><br><span class="line">                <span class="comment"># 设置请求头，并将头信息传递给服务器端 </span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">                <span class="comment"># 设置请求头，传递原始请求ip给 gunicorn 服务器</span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="3"><li><p>启动ngnix服务器</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure></li><li><p>python虚拟环境中安装 Gunicorn(wsgi协议的服务器)</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> Gunicorn</span><br></pre></td></tr></table></figure></li><li><p>启动Gunicorn</p></li></ol><ul><li>进入flask程序的启动文件所在文件夹.比如我的启动文件是manage.py<br>那么运行命令就是:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">gunicorn</span> <span class="selector-tag">-w</span> 2 <span class="selector-tag">-b</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:5000</span> <span class="selector-tag">manage</span><span class="selector-pseudo">:app</span> <span class="selector-tag">-D</span> <span class="selector-tag">--reload</span></span><br></pre></td></tr></table></figure></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参数含义: -D表示后台运行. --reload表示重启Gunicorn.已经运行的会重新启动不必要去<span class="built_in">kill</span>进程.</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -549,38 +582,6 @@
     
       <category term="code" scheme="https://www.leejia.me/categories/code/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>git基本命令</title>
-    <link href="https://www.leejia.me/code/git.html"/>
-    <id>https://www.leejia.me/code/git.html</id>
-    <published>2018-08-16T04:56:12.000Z</published>
-    <updated>2018-09-17T02:27:50.815Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>git init 初始化git,当前文件夹使用git管理</li><li>git add . 添加到暂存区</li><li>git commit -m “修改明细”  提交到本地仓库</li><li>git status 查看状态</li><li>git push 推送到远程服务器</li><li>git pull 从远程服务器拉取代码</li></ul><hr><ul><li>git log / reflog 查看日记</li><li>git reset HEAD^  回退到上一个版本或者指定版本</li><li>git reset –hard 589e122 回退到指定版本</li><li>git diff  对比</li><li>git rm 删除</li><li>git checkout 检查</li></ul><hr><blockquote><p>标签</p></blockquote><ul><li>git tag -a v1.0 -m “version 1.0” 给项目打标签</li><li>git push origin v1.0  push到远程服务器</li></ul><hr><ul><li>git brach 查看当前分支</li><li>git checkout -b dev  创建dev 分支</li><li>git push -u origin dev 把当前分支同步到服务器</li><li>git checkout master  切换分支</li><li>git merge dev 合并分支</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;git init 初始化git,当前文件夹使用git管理&lt;/li&gt;
-&lt;li&gt;git add . 添加到暂存区&lt;/li&gt;
-&lt;li&gt;git commit -m “修改明细”  提交到本地仓库&lt;/li&gt;
-&lt;li&gt;git status 查看状态&lt;/li&gt;
-&lt;li&gt;git
-      
-    
-    </summary>
-    
-      <category term="code" scheme="https://www.leejia.me/categories/code/"/>
-    
-    
-      <category term="git" scheme="https://www.leejia.me/tags/git/"/>
-    
-      <category term="github" scheme="https://www.leejia.me/tags/github/"/>
     
   </entry>
   

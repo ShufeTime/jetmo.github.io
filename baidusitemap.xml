@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>https://www.leejia.me/code/clean_your_ubuntu.html</loc>
+    <lastmod>2018-09-18T02:23:11.810Z</lastmod>
+    <data>
+        <display>
+        <title>关于ubuntu清理垃圾</title>
+        <pubTime>2018-09-18T02:18:14.000Z</pubTime>
+        
+        <tag>ubuntu</tag>
+         
+        <tag>mac</tag>
+         
+        <tag>clean</tag>
+         
+        <tag>垃圾</tag>
+         
+         
+           
+             
+              <breadCrumb title="code" url="https://www.leejia.me/categories/code/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://www.leejia.me/code/diy_your_terminal.html</loc>
     <lastmod>2018-09-17T05:16:57.181Z</lastmod>
     <data>
@@ -11,9 +37,9 @@
         <title>定制mac终端欢迎页</title>
         <pubTime>2018-09-17T05:10:20.000Z</pubTime>
         
-        <tag>terminal</tag>
-         
         <tag>mac</tag>
+         
+        <tag>terminal</tag>
          
         <tag>终端</tag>
          
