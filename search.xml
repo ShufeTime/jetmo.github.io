@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>博客启动新主题</title>
+      <link href="/code/blog_use_new_theme.html"/>
+      <url>/code/blog_use_new_theme.html</url>
+      
+        <content type="html"><![CDATA[<p>博客之前一直使用的是<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="noopener">Maupassant</a>.非常感谢<a href="https://www.haomwei.com" target="_blank" rel="noopener">屠城</a>,提供这款漂亮简洁的主题.</p><p>今天启用了<a href="https://github.com/cofess/" target="_blank" rel="noopener">cofess</a> 开发的主题<a href="https://github.com/cofess/hexo-theme-pure" target="_blank" rel="noopener">pure</a> .这款主题在Hexo官方的主题库中有.一款非常漂亮的主题.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> theme </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Hexo生成的RSS文件atmo.xml报错</title>
       <link href="/code/id_rss_vscode_bug.html"/>
       <url>/code/id_rss_vscode_bug.html</url>

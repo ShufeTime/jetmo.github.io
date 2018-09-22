@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-09-21T10:44:56.640Z</updated>
+  <updated>2018-09-22T02:30:28.510Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客启动新主题</title>
+    <link href="https://www.leejia.me/code/blog_use_new_theme.html"/>
+    <id>https://www.leejia.me/code/blog_use_new_theme.html</id>
+    <published>2018-09-22T02:08:03.000Z</published>
+    <updated>2018-09-22T02:30:28.510Z</updated>
+    
+    <content type="html"><![CDATA[<p>博客之前一直使用的是<a href="https://github.com/tufu9441/maupassant-hexo" target="_blank" rel="noopener">Maupassant</a>.非常感谢<a href="https://www.haomwei.com" target="_blank" rel="noopener">屠城</a>,提供这款漂亮简洁的主题.</p><p>今天启用了<a href="https://github.com/cofess/" target="_blank" rel="noopener">cofess</a> 开发的主题<a href="https://github.com/cofess/hexo-theme-pure" target="_blank" rel="noopener">pure</a> .这款主题在Hexo官方的主题库中有.一款非常漂亮的主题.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;博客之前一直使用的是&lt;a href=&quot;https://github.com/tufu9441/maupassant-hexo&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Maupassant&lt;/a&gt;.非常感谢&lt;a href=&quot;https://www.ha
+      
+    
+    </summary>
+    
+      <category term="code" scheme="https://www.leejia.me/categories/code/"/>
+    
+    
+      <category term="hexo" scheme="https://www.leejia.me/tags/hexo/"/>
+    
+      <category term="theme" scheme="https://www.leejia.me/tags/theme/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo生成的RSS文件atmo.xml报错</title>
@@ -563,33 +590,6 @@
       <category term="flask" scheme="https://www.leejia.me/tags/flask/"/>
     
       <category term="ngnix" scheme="https://www.leejia.me/tags/ngnix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
-    <link href="https://www.leejia.me/flask/mysqlclientpython.html"/>
-    <id>https://www.leejia.me/flask/mysqlclientpython.html</id>
-    <published>2018-08-29T01:50:19.000Z</published>
-    <updated>2018-08-30T10:50:54.923Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="使用CentOS基本源安装Python2链接库"><a href="#使用CentOS基本源安装Python2链接库" class="headerlink" title="使用CentOS基本源安装Python2链接库"></a>使用CentOS基本源安装Python2链接库</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install python-devel</span><br></pre></td></tr></table></figure><h4 id="使用CentOS-EPEL源安装Python3对应版本的链接库包"><a href="#使用CentOS-EPEL源安装Python3对应版本的链接库包" class="headerlink" title="使用CentOS EPEL源安装Python3对应版本的链接库包"></a>使用CentOS EPEL源安装Python3对应版本的链接库包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install python34-devel</span><br></pre></td></tr></table></figure><p>现在再安装<code>mysqlclient</code>就不会出现<code>编译中断。</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: <span class="built_in">command</span> <span class="string">'gcc'</span> failed with <span class="built_in">exit</span> status 1</span><br></pre></td></tr></table></figure><p>这样的错误了. 安装:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysqlclient</span><br></pre></td></tr></table></figure><h4 id="后续再安装Flask-MySQLdb-也不会报错啦"><a href="#后续再安装Flask-MySQLdb-也不会报错啦" class="headerlink" title="后续再安装Flask-MySQLdb 也不会报错啦."></a>后续再安装<code>Flask-MySQLdb</code> 也不会报错啦.</h4><p>安装:    </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install flask-mysqldb</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;使用CentOS基本源安装Python2链接库&quot;&gt;&lt;a href=&quot;#使用CentOS基本源安装Python2链接库&quot; class=&quot;headerlink&quot; title=&quot;使用CentOS基本源安装Python2链接库&quot;&gt;&lt;/a&gt;使用CentOS基本源安装Pyth
-      
-    
-    </summary>
-    
-      <category term="flask" scheme="https://www.leejia.me/categories/flask/"/>
-    
-    
-      <category term="flask" scheme="https://www.leejia.me/tags/flask/"/>
-    
-      <category term="mysqlclient" scheme="https://www.leejia.me/tags/mysqlclient/"/>
     
   </entry>
   
