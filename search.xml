@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>mac安装pyv8模块</title>
+      <link href="/code/install_pyv8.html"/>
+      <url>/code/install_pyv8.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -e git://github.com/brokenseal/PyV8-OS-X<span class="comment">#egg=pyv8</span></span><br></pre></td></tr></table></figure><p>保持网络畅通, 然后等待… 就成功了.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Last login: Mon Oct  8 13:31:59 on ttys000</span><br><span class="line">Page: www.leejia.me</span><br><span class="line">NickName: Leejia</span><br><span class="line">➜  ~ pip install -e git://github.com/brokenseal/PyV8-OS-X<span class="comment">#egg=pyv8 </span></span><br><span class="line">Looking <span class="keyword">in</span> indexes: http://mirrors.aliyun.com/pypi/simple</span><br><span class="line">Obtaining pyv8 from git+git://github.com/brokenseal/PyV8-OS-X<span class="comment">#egg=pyv8</span></span><br><span class="line">  Cloning git://github.com/brokenseal/PyV8-OS-X to ./src/pyv8</span><br><span class="line">Installing collected packages: pyv8</span><br><span class="line">  Running setup.py develop <span class="keyword">for</span> pyv8</span><br><span class="line">Successfully installed pyv8</span><br><span class="line">You are using pip version 18.0, however version 18.1 is available.</span><br><span class="line">You should consider upgrading via the <span class="string">'pip install --upgrade pip'</span> <span class="built_in">command</span>.</span><br><span class="line">➜  ~ ipython3</span><br></pre></td></tr></table></figure></p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ipython3</span><br><span class="line">Python 3.6.5 (v3.6.5:f59c0932b4, Mar 28 2018, 05:52:31) </span><br><span class="line">Type <span class="string">'copyright'</span>, <span class="string">'credits'</span> or <span class="string">'license'</span> <span class="keyword">for</span> more information</span><br><span class="line">IPython 6.4.0 -- An enhanced Interactive Python. Type <span class="string">'?'</span> <span class="keyword">for</span> <span class="built_in">help</span>.</span><br><span class="line"></span><br><span class="line">In [1]: import pyv8</span><br><span class="line"></span><br><span class="line">In [2]:</span><br></pre></td></tr></table></figure><p><code>import pyv8</code> 没有报错就表示成功了.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> mac </tag>
+            
+            <tag> pyv8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>博客启用新主题</title>
       <link href="/code/blog_use_new_theme.html"/>
       <url>/code/blog_use_new_theme.html</url>
