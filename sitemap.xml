@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/python/module_APScheduler.html</loc>
+    
+    <lastmod>2018-10-09T03:10:00.018Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/about/index.html</loc>
     
     <lastmod>2018-10-08T07:44:53.336Z</lastmod>
@@ -58,14 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/repository/index.html</loc>
-    
-    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/books/index.html</loc>
+    <loc>https://www.leejia.me/categories/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     
@@ -79,7 +79,14 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/categories/index.html</loc>
+    <loc>https://www.leejia.me/repository/index.html</loc>
+    
+    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/books/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     

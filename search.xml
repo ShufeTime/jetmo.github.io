@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>每天定时任务APScheduler模块</title>
+      <link href="/python/module_APScheduler.html"/>
+      <url>/python/module_APScheduler.html</url>
+      
+        <content type="html"><![CDATA[<p>有的时候我们需要一个定时任务，每天同一时间点去发送。这时候，就需要写一个定时任务了。这里我们用到了APScheduler这个库，不了解的去看一下官方文档，这里以每天早上8点钟为例。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install APScheduler</span><br></pre></td></tr></table></figure><h2 id="APScheduler"><a href="#APScheduler" class="headerlink" title="APScheduler"></a>APScheduler</h2><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">APScheduler是一个<span class="keyword">python</span>的第三方库，用来提供<span class="keyword">python</span>的后台程序。包含四个组件，分别是：</span><br><span class="line"></span><br><span class="line">triggers： 任务触发器组件，提供任务触发方式</span><br><span class="line"></span><br><span class="line">job stores： 任务商店组件，提供任务保存方式</span><br><span class="line"></span><br><span class="line">executors： 任务调度组件，提供任务调度方式</span><br><span class="line"></span><br><span class="line">schedulers： 任务调度组件，提供任务工作方式</span><br></pre></td></tr></table></figure><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化一个调度器</span></span><br><span class="line">scheduler = BlockingScheduler()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"%s: 执行任务"</span>  % time.asctime()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加任务并设置触发方式为3s一次</span></span><br><span class="line">scheduler.add_job(job1, <span class="string">'interval'</span>, seconds=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始运行调度器</span></span><br><span class="line">scheduler.start()</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(get_time() + <span class="string">" 开始执行任务"</span>)</span><br><span class="line">    scheduler.add_job(任务函数, <span class="string">'cron'</span>, day_of_week=<span class="string">'0-6'</span>, hour=<span class="number">8</span>, minute=<span class="number">00</span>, second=<span class="number">00</span>)</span><br><span class="line">    scheduler.start()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> APScheduler </tag>
+            
+            <tag> 定时任务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>mac安装pyv8模块</title>
       <link href="/code/install_pyv8.html"/>
       <url>/code/install_pyv8.html</url>
