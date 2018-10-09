@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-10-09T03:10:00.018Z</updated>
+  <updated>2018-10-09T10:30:06.619Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>apscheduler出现Unable to determine the name of the local timezone的解决方法</title>
+    <link href="https://www.leejia.me/python/Unable-to-determine-the-name-of-the-local-timezone.html"/>
+    <id>https://www.leejia.me/python/Unable-to-determine-the-name-of-the-local-timezone.html</id>
+    <published>2018-10-09T10:23:39.000Z</published>
+    <updated>2018-10-09T10:30:06.619Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天写了一个定时任务,实现每天推送信息到微信上, 代码在macbookpro 上跑起来的时候非常顺畅.但是部署到centos就不对了, 一个劲的给我报错.<br><code>ValueError: Unable to determine the name of the local timezone -- you must explicitly specify the name of the local timezone. Please refrain from using timezones like EST to prevent problems with daylight saving time. Instead, use a locale based timezone name (such as Europe/Helsinki).</code><br>具体代码在下面:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">2018-10-09 06:18:48 开始执行任务</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"goodmorning.py"</span>, line 113, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    goodmorning.run()</span><br><span class="line">  File <span class="string">"goodmorning.py"</span>, line 106, <span class="keyword">in</span> run</span><br><span class="line">    scheduler.add_job(self.make, <span class="string">'cron'</span>, day_of_week=<span class="string">'0-6'</span>, hour=7, minute=30, second=00)</span><br><span class="line">  File <span class="string">"/root/goodmorning/venv/lib/python3.4/site-packages/apscheduler/schedulers/base.py"</span>, line 416, <span class="keyword">in</span> add_job</span><br><span class="line">    <span class="string">'trigger'</span>: self._create_trigger(trigger, trigger_args),</span><br><span class="line">  File <span class="string">"/root/goodmorning/venv/lib/python3.4/site-packages/apscheduler/schedulers/base.py"</span>, line 918, <span class="keyword">in</span> _create_trigger</span><br><span class="line">    <span class="built_in">return</span> self._create_plugin_instance(<span class="string">'trigger'</span>, trigger, trigger_args)</span><br><span class="line">  File <span class="string">"/root/goodmorning/venv/lib/python3.4/site-packages/apscheduler/schedulers/base.py"</span>, line 903, <span class="keyword">in</span> _create_plugin_instance</span><br><span class="line">    <span class="built_in">return</span> plugin_cls(**constructor_kwargs)</span><br><span class="line">  File <span class="string">"/root/goodmorning/venv/lib/python3.4/site-packages/apscheduler/triggers/cron/__init__.py"</span>, line 52, <span class="keyword">in</span> __init__</span><br><span class="line">    self.timezone = astimezone(timezone)</span><br><span class="line">  File <span class="string">"/root/goodmorning/venv/lib/python3.4/site-packages/apscheduler/util.py"</span>, line 87, <span class="keyword">in</span> astimezone</span><br><span class="line">    <span class="string">'Unable to determine the name of the local timezone -- you must explicitly '</span></span><br><span class="line">ValueError: Unable to determine the name of the <span class="built_in">local</span> timezone -- you must explicitly specify the name of the <span class="built_in">local</span> timezone. Please refrain from using timezones like EST to prevent problems with daylight saving time. Instead, use a locale based timezone name (such as Europe/Helsinki).</span><br></pre></td></tr></table></figure></p><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl <span class="built_in">set</span>-timezone Asia/Shanghai</span><br></pre></td></tr></table></figure><p>这样既可以解决找不到timezone的问题.还可以把失去修改成上海(博主的服务器在美国.便宜啊.而且好像.me域名在国内无法备案了.)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天写了一个定时任务,实现每天推送信息到微信上, 代码在macbookpro 上跑起来的时候非常顺畅.但是部署到centos就不对了, 一个劲的给我报错.&lt;br&gt;&lt;code&gt;ValueError: Unable to determine the name of the lo
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://www.leejia.me/categories/python/"/>
+    
+    
+      <category term="apscheduler" scheme="https://www.leejia.me/tags/apscheduler/"/>
+    
+      <category term="python" scheme="https://www.leejia.me/tags/python/"/>
+    
+      <category term="timezone" scheme="https://www.leejia.me/tags/timezone/"/>
+    
+  </entry>
   
   <entry>
     <title>每天定时任务APScheduler模块</title>
@@ -67,11 +96,11 @@
       <category term="code" scheme="https://www.leejia.me/categories/code/"/>
     
     
+      <category term="python" scheme="https://www.leejia.me/tags/python/"/>
+    
       <category term="pyv8" scheme="https://www.leejia.me/tags/pyv8/"/>
     
       <category term="mac" scheme="https://www.leejia.me/tags/mac/"/>
-    
-      <category term="python" scheme="https://www.leejia.me/tags/python/"/>
     
   </entry>
   
@@ -566,33 +595,6 @@
       <category term="装饰器" scheme="https://www.leejia.me/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
     
       <category term="as_view" scheme="https://www.leejia.me/tags/as-view/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
-    <link href="https://www.leejia.me/code/mkvirtualenv-stevedore-error.html"/>
-    <id>https://www.leejia.me/code/mkvirtualenv-stevedore-error.html</id>
-    <published>2018-08-30T04:57:41.000Z</published>
-    <updated>2018-09-21T10:36:47.437Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="事发有因"><a href="#事发有因" class="headerlink" title="事发有因"></a>事发有因</h3><p>一直以来我都是使用<code>virtualenv venv</code>来创建虚拟环境的.然后使用<code>source venv/bin/activate</code>激活虚拟环境. 虚拟环境越来越多,于是尝试使用<code>virtualenvwrapper</code>来管理虚拟环境.<code>pip install virtualenvwrapper</code> 没有问题.但是使用<code>mkvirtualenv</code>创建虚拟环境出现如下错误:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">JetmodeMacBook-Pro➜  ~  ᐅ  mkvirtualenv dj -p python3</span><br><span class="line">Already using interpreter /Library/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/bin/python3</span><br><span class="line">Using base prefix <span class="string">'/Library/Frameworks/Python.framework/Versions/3.6'</span></span><br><span class="line">New python executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python3</span><br><span class="line">Also creating executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">174</span>, <span class="keyword">in</span> _run_module_as_main</span><br><span class="line">    <span class="string">"__main__"</span>, fname, loader, pkg_name)</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">72</span>, <span class="keyword">in</span> _run_code</span><br><span class="line">    <span class="keyword">exec</span> code <span class="keyword">in</span> run_globals</span><br><span class="line">  File <span class="string">"/usr/local/lib/python2.7/site-packages/virtualenvwrapper-4.8.2-py2.7.egg/virtualenvwrapper/hook_loader.py"</span>, line <span class="number">16</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">from</span> stevedore <span class="keyword">import</span> ExtensionManager</span><br><span class="line">ImportError: No module named stevedore</span><br></pre></td></tr></table></figure><h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>原因是缺少<code>stevedore</code>模块.直接安装会继续报错,多次尝试后找到了解决办法.</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p><strong>使用pip2安装</strong>很多同学应该都是默认pip3版本,但是这个模块一定要使用pip2安装(我是这样的). zsh中键入pip后两次tab键找到选择pip2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip2 uninstall stevedore <span class="comment"># 先卸载</span></span><br><span class="line">sudo pip2 install stevedore <span class="comment"># 再安装</span></span><br></pre></td></tr></table></figure></p><p>然后再使用<code>mkvirtualenv django_py3 -p python3</code> 安装虚拟环境就不会报错了.</p><h3 id="延伸-虚拟环境"><a href="#延伸-虚拟环境" class="headerlink" title="延伸(虚拟环境)"></a>延伸(虚拟环境)</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenv</span><br><span class="line">sudo pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、创建目录用来存放虚拟环境</span></span><br><span class="line">mkdir </span><br><span class="line"><span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、打开~/.bashrc文件，并添加如下：</span></span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=<span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、运行</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><h4 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv -<span class="selector-tag">p</span> python3 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">workon</span> 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deactivate</span></span><br></pre></td></tr></table></figure><h4 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">rmvirtualenv</span> 虚拟环境名称</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;事发有因&quot;&gt;&lt;a href=&quot;#事发有因&quot; class=&quot;headerlink&quot; title=&quot;事发有因&quot;&gt;&lt;/a&gt;事发有因&lt;/h3&gt;&lt;p&gt;一直以来我都是使用&lt;code&gt;virtualenv venv&lt;/code&gt;来创建虚拟环境的.然后使用&lt;code&gt;source
-      
-    
-    </summary>
-    
-      <category term="code" scheme="https://www.leejia.me/categories/code/"/>
-    
-    
-      <category term="stevedore" scheme="https://www.leejia.me/tags/stevedore/"/>
-    
-      <category term="virtualenv" scheme="https://www.leejia.me/tags/virtualenv/"/>
     
   </entry>
   
