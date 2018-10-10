@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/python/python_list_extend.html</loc>
+    
+    <lastmod>2018-10-10T04:04:43.100Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/python/Unable-to-determine-the-name-of-the-local-timezone.html</loc>
     
     <lastmod>2018-10-09T10:30:06.619Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/repository/index.html</loc>
+    <loc>https://www.leejia.me/books/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.leejia.me/links/index.html</loc>
+    <loc>https://www.leejia.me/repository/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     
@@ -93,7 +100,7 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/books/index.html</loc>
+    <loc>https://www.leejia.me/links/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     

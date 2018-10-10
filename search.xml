@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>python列表的extend方法</title>
+      <link href="/python/python_list_extend.html"/>
+      <url>/python/python_list_extend.html</url>
+      
+        <content type="html"><![CDATA[<p>越是我以为熟悉的知识,细细研究越能有一些新的发现.<br>今天在使用列表的时候,有了新的发现. 这个点是王之前一直没有注意到的问题.<br>列表的extend()方法只能传可迭代对象,如果是不可迭代对象会报错.<br>如果传入的是字典.那么会添加字典的键到列表中, 具体看代码(注释)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: li = list()  <span class="comment"># 定义一个空列表</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: a = &#123;<span class="string">'lijia'</span>: <span class="number">123</span>&#125; </span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: li.extend(a)</span><br><span class="line"></span><br><span class="line">In [<span class="number">5</span>]: li</span><br><span class="line">Out[<span class="number">5</span>]: [<span class="string">'lijia'</span>]  <span class="comment"># 可以看出只能添加字典a的键</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">6</span>]: b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">7</span>]: li.extend(b)</span><br><span class="line"></span><br><span class="line">In [<span class="number">8</span>]: li</span><br><span class="line">Out[<span class="number">8</span>]: [<span class="string">'lijia'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">In [<span class="number">9</span>]: c = &#123;a: <span class="number">3</span>&#125; <span class="comment"># 这粒定义了一个错误的字典....</span></span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">TypeError                              Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input<span class="number">-9</span><span class="number">-198</span>aa74edb36&gt; <span class="keyword">in</span> &lt;module&gt;()</span><br><span class="line">----&gt; 1 c = &#123;a: 3&#125;</span><br><span class="line"></span><br><span class="line">TypeError: unhashable type: <span class="string">'dict'</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">10</span>]: c = &#123;<span class="string">'2'</span>: <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">In [<span class="number">11</span>]: li.extend(c)</span><br><span class="line"></span><br><span class="line">In [<span class="number">12</span>]: li</span><br><span class="line">Out[<span class="number">12</span>]: [<span class="string">'lijia'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'2'</span>]  <span class="comment"># 只把字典c 的键</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">13</span>]: d = <span class="number">456666</span>  <span class="comment"># 整型d 不可迭代</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">14</span>]: li.extend(d)</span><br><span class="line">---------------------------------------------------------------------------</span><br><span class="line">TypeError                                 Traceback (most recent call last)</span><br><span class="line">&lt;ipython-input<span class="number">-14</span><span class="number">-7</span>f659be96b91&gt; <span class="keyword">in</span> &lt;module&gt;()</span><br><span class="line">----&gt; 1 li.extend(d)</span><br><span class="line"></span><br><span class="line">TypeError: <span class="string">'int'</span> object <span class="keyword">is</span> <span class="keyword">not</span> iterable</span><br><span class="line"></span><br><span class="line">In [<span class="number">15</span>]:</span><br></pre></td></tr></table></figure><p>OK 收工.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> list </tag>
+            
+            <tag> extend </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>apscheduler出现Unable to determine the name of the local timezone的解决方法</title>
       <link href="/python/Unable-to-determine-the-name-of-the-local-timezone.html"/>
       <url>/python/Unable-to-determine-the-name-of-the-local-timezone.html</url>
