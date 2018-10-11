@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title>linux查看日志文件内容命令tail、cat、tac、head、echo</title>
+      <link href="/python/linux_log_command.html"/>
+      <url>/python/linux_log_command.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>linux查看日志文件内容命令tail、cat、tac、head、echo<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f <span class="keyword">test</span>.<span class="built_in">log</span></span><br></pre></td></tr></table></figure></li></ul><p>你会看到屏幕不断有内容被打印出来. 这时候中断第一个进程Ctrl-C,</p><p>linux 如何显示一个文件的某几行(中间几行)</p><ul><li><p>从第3000行开始，显示1000行。即显示3000~3999行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename | <span class="type">tail</span> -n +<span class="number">3000</span> | <span class="type">head</span> -n <span class="number">1000</span></span><br></pre></td></tr></table></figure></li><li><p>显示1000行到3000行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename| <span class="type">head</span> -n <span class="number">3000</span> | <span class="type">tail</span> -n +<span class="number">1000</span></span><br></pre></td></tr></table></figure></li></ul><p>注意两种方法的顺序</p><ul><li><p>分解：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail -n <span class="number">1000</span>：显示最后<span class="number">1000</span>行</span><br><span class="line">tail -n +<span class="number">1000</span>：从<span class="number">1000</span>行开始显示，显示<span class="number">1000</span>行以后的</span><br><span class="line">head -n <span class="number">1000</span>：显示前面<span class="number">1000</span>行</span><br></pre></td></tr></table></figure></li><li><p>用sed命令</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n '<span class="number">5</span>,<span class="number">10</span>p' filename 这样你就可以只查看文件的第<span class="number">5</span>行到第<span class="number">10</span>行。</span><br></pre></td></tr></table></figure></li></ul><p>例：cat mylog.log | tail -n 1000 #输出mylog.log 文件最后一千行</p><p>cat主要有三大功能：</p><ol><li>一次显示整个文件。$ cat filename</li><li>从键盘创建一个文件。$ cat &gt; filename<br>只能创建新文件,不能编辑已有文件.</li><li>将几个文件合并为一个文件：<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> $cat file1 file2 &gt; file</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">-<span class="ruby">n 或 --number 由 <span class="number">1</span> 开始对所有输出的行数编号</span></span><br><span class="line"><span class="ruby">-b 或 --number-nonblank 和 -n 相似，只不过对于空白行不编号</span></span><br><span class="line"><span class="ruby">-s 或 --squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行</span></span><br><span class="line"><span class="ruby">-v 或 --show-nonprinting</span></span><br></pre></td></tr></table></figure></li></ol><p>例：<br>把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -<span class="built_in">n</span> textfile1 &gt; textfile2</span><br></pre></td></tr></table></figure></p><p>把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -b textfile1 textfile2 <span class="meta">&gt;&gt; </span>textfile3</span><br></pre></td></tr></table></figure></p><p>把test.txt文件扔进垃圾箱，赋空值test.txt<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/null &gt; <span class="regexp">/etc/test</span>.txt </span><br><span class="line">注意：&gt;意思是创建，<span class="meta">&gt;&gt;</span>是追加。千万不要弄混了。</span><br></pre></td></tr></table></figure></p><ul><li>tac (反向列示)<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tac 是将 <span class="built_in">cat</span> 反写过来，所以他的功能就跟 <span class="built_in">cat</span> 相反， <span class="built_in">cat</span> 是由第一行到最后一行连续显示在萤幕上，</span><br><span class="line">而 tac 则是由最后一行到第一行反向在萤幕上显示出来！</span><br></pre></td></tr></table></figure></li></ul><p>在Linux中echo命令用来在标准输出上显示一段字符，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"the echo command test!"</span></span><br></pre></td></tr></table></figure></p><p>这个就会输出“the echo command test!”这一行文字！<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"the echo command test!"</span>&gt;<span class="selector-tag">a</span>.sh</span><br></pre></td></tr></table></figure></p><p>这个就会在a.sh文件中输出“the echo command test!”这一行文字！ </p><p>该命令的一般格式为： echo [ -n ] </p><p>字符串其中选项n表示输出文字后不换行；字符串能加引号，也能不加引号。</p><p>用echo命令输出加引号的字符串时，将字符串原样输出；</p><p>用echo命令输出不加引号的字符串时，将字符串中的各个单词作为字符串输出，各字符串之间用一个空格分割。</p><blockquote><p>摘自:<a href="https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html" target="_blank" rel="noopener">https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tail </tag>
+            
+            <tag> cat </tag>
+            
+            <tag> head </tag>
+            
+            <tag> echo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>python列表的extend方法</title>
       <link href="/python/python_list_extend.html"/>
       <url>/python/python_list_extend.html</url>
