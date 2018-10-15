@@ -3,35 +3,6 @@
   
     
     <entry>
-      <title>linux查看日志文件内容命令tail、cat、tac、head、echo</title>
-      <link href="/python/linux_log_command.html"/>
-      <url>/python/linux_log_command.html</url>
-      
-        <content type="html"><![CDATA[<ul><li>linux查看日志文件内容命令tail、cat、tac、head、echo<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f <span class="keyword">test</span>.<span class="built_in">log</span></span><br></pre></td></tr></table></figure></li></ul><p>你会看到屏幕不断有内容被打印出来. 这时候中断第一个进程Ctrl-C,</p><p>linux 如何显示一个文件的某几行(中间几行)</p><ul><li><p>从第3000行开始，显示1000行。即显示3000~3999行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename | <span class="type">tail</span> -n +<span class="number">3000</span> | <span class="type">head</span> -n <span class="number">1000</span></span><br></pre></td></tr></table></figure></li><li><p>显示1000行到3000行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename| <span class="type">head</span> -n <span class="number">3000</span> | <span class="type">tail</span> -n +<span class="number">1000</span></span><br></pre></td></tr></table></figure></li></ul><p>注意两种方法的顺序</p><ul><li><p>分解：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail -n <span class="number">1000</span>：显示最后<span class="number">1000</span>行</span><br><span class="line">tail -n +<span class="number">1000</span>：从<span class="number">1000</span>行开始显示，显示<span class="number">1000</span>行以后的</span><br><span class="line">head -n <span class="number">1000</span>：显示前面<span class="number">1000</span>行</span><br></pre></td></tr></table></figure></li><li><p>用sed命令</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n '<span class="number">5</span>,<span class="number">10</span>p' filename 这样你就可以只查看文件的第<span class="number">5</span>行到第<span class="number">10</span>行。</span><br></pre></td></tr></table></figure></li></ul><p>例：cat mylog.log | tail -n 1000 #输出mylog.log 文件最后一千行</p><p>cat主要有三大功能：</p><ol><li>一次显示整个文件。$ cat filename</li><li>从键盘创建一个文件。$ cat &gt; filename<br>只能创建新文件,不能编辑已有文件.</li><li>将几个文件合并为一个文件：<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> $cat file1 file2 &gt; file</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">-<span class="ruby">n 或 --number 由 <span class="number">1</span> 开始对所有输出的行数编号</span></span><br><span class="line"><span class="ruby">-b 或 --number-nonblank 和 -n 相似，只不过对于空白行不编号</span></span><br><span class="line"><span class="ruby">-s 或 --squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行</span></span><br><span class="line"><span class="ruby">-v 或 --show-nonprinting</span></span><br></pre></td></tr></table></figure></li></ol><p>例：<br>把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -<span class="built_in">n</span> textfile1 &gt; textfile2</span><br></pre></td></tr></table></figure></p><p>把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -b textfile1 textfile2 <span class="meta">&gt;&gt; </span>textfile3</span><br></pre></td></tr></table></figure></p><p>把test.txt文件扔进垃圾箱，赋空值test.txt<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/null &gt; <span class="regexp">/etc/test</span>.txt </span><br><span class="line">注意：&gt;意思是创建，<span class="meta">&gt;&gt;</span>是追加。千万不要弄混了。</span><br></pre></td></tr></table></figure></p><ul><li>tac (反向列示)<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tac 是将 <span class="built_in">cat</span> 反写过来，所以他的功能就跟 <span class="built_in">cat</span> 相反， <span class="built_in">cat</span> 是由第一行到最后一行连续显示在萤幕上，</span><br><span class="line">而 tac 则是由最后一行到第一行反向在萤幕上显示出来！</span><br></pre></td></tr></table></figure></li></ul><p>在Linux中echo命令用来在标准输出上显示一段字符，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"the echo command test!"</span></span><br></pre></td></tr></table></figure></p><p>这个就会输出“the echo command test!”这一行文字！<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"the echo command test!"</span>&gt;<span class="selector-tag">a</span>.sh</span><br></pre></td></tr></table></figure></p><p>这个就会在a.sh文件中输出“the echo command test!”这一行文字！ </p><p>该命令的一般格式为： echo [ -n ] </p><p>字符串其中选项n表示输出文字后不换行；字符串能加引号，也能不加引号。</p><p>用echo命令输出加引号的字符串时，将字符串原样输出；</p><p>用echo命令输出不加引号的字符串时，将字符串中的各个单词作为字符串输出，各字符串之间用一个空格分割。</p><blockquote><p>摘自:<a href="https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html" target="_blank" rel="noopener">https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html</a></p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> tail </tag>
-            
-            <tag> cat </tag>
-            
-            <tag> head </tag>
-            
-            <tag> echo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>python列表的extend方法</title>
       <link href="/python/python_list_extend.html"/>
       <url>/python/python_list_extend.html</url>
@@ -80,33 +51,6 @@
             <tag> python </tag>
             
             <tag> timezone </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>每天定时任务APScheduler模块</title>
-      <link href="/python/module_APScheduler.html"/>
-      <url>/python/module_APScheduler.html</url>
-      
-        <content type="html"><![CDATA[<p>有的时候我们需要一个定时任务，每天同一时间点去发送。这时候，就需要写一个定时任务了。这里我们用到了APScheduler这个库，不了解的去看一下官方文档，这里以每天早上8点钟为例。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install APScheduler</span><br></pre></td></tr></table></figure><h2 id="APScheduler"><a href="#APScheduler" class="headerlink" title="APScheduler"></a>APScheduler</h2><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">APScheduler是一个<span class="keyword">python</span>的第三方库，用来提供<span class="keyword">python</span>的后台程序。包含四个组件，分别是：</span><br><span class="line"></span><br><span class="line">triggers： 任务触发器组件，提供任务触发方式</span><br><span class="line"></span><br><span class="line">job stores： 任务商店组件，提供任务保存方式</span><br><span class="line"></span><br><span class="line">executors： 任务调度组件，提供任务调度方式</span><br><span class="line"></span><br><span class="line">schedulers： 任务调度组件，提供任务工作方式</span><br></pre></td></tr></table></figure><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化一个调度器</span></span><br><span class="line">scheduler = BlockingScheduler()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"%s: 执行任务"</span>  % time.asctime()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加任务并设置触发方式为3s一次</span></span><br><span class="line">scheduler.add_job(job1, <span class="string">'interval'</span>, seconds=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始运行调度器</span></span><br><span class="line">scheduler.start()</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(get_time() + <span class="string">" 开始执行任务"</span>)</span><br><span class="line">    scheduler.add_job(任务函数, <span class="string">'cron'</span>, day_of_week=<span class="string">'0-6'</span>, hour=<span class="number">8</span>, minute=<span class="number">00</span>, second=<span class="number">00</span>)</span><br><span class="line">    scheduler.start()</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> APScheduler </tag>
-            
-            <tag> 定时任务 </tag>
             
         </tags>
       
@@ -275,59 +219,11 @@
     </entry>
     
     <entry>
-      <title>docker安装和使用</title>
-      <link href="/code/install_docker_and_use.html"/>
-      <url>/code/install_docker_and_use.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>更新ubuntu的apt源索引<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p><p>安装包允许apt通过HTTPS使用仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure></p><p>添加Docker官方GPG key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p><p>设置Docker稳定版仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br></pre></td></tr></table></figure></p><p>添加仓库后，更新apt源索引<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p><p>安装最新版Docker CE（社区版）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure></p><p>检查Docker CE是否安装正确<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></p><p>出现如下信息，表示安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Status: Downloaded newer image <span class="keyword">for</span> hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> 1. The Docker client contacted the Docker daemon.</span><br><span class="line"> 2. The Docker daemon pulled the <span class="string">"hello-world"</span> image from the Docker Hub.</span><br><span class="line">    (amd64)</span><br><span class="line"> 3. The Docker daemon created a new container from that image <span class="built_in">which</span> runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> 4. The Docker daemon streamed that output to the Docker client, <span class="built_in">which</span> sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">Share images, automate workflows, and more with a free Docker ID:</span><br><span class="line"> https://hub.docker.com/</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> https://docs.docker.com/get-started/</span><br></pre></td></tr></table></figure></p><h3 id="启动与停止"><a href="#启动与停止" class="headerlink" title="启动与停止"></a>启动与停止</h3><p>安装完成Docker后，默认已经启动了docker服务，如需手动控制docker服务的启停，可执行如下命令</p><p>启动docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure></p><p>停止docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure></p><p>重启docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> code </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>开发记录之django框架数据库迁移</title>
-      <link href="/django/djang_migrate_dababase.html"/>
-      <url>/django/djang_migrate_dababase.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>今天新建了一个数据库模型, 但是却怎么也迁移不成功.显示:没有任何改变..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">No changes detected</span><br></pre></td></tr></table></figure></p><p>后来忽然想到一个问题: 我只是建立了数据模型,但是并没有个和django框架本身建立联系.<br>很显然我没有注册app….<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line">    <span class="string">'areas.apps.AreasConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>注册后再执行果然妥妥的成功了~~~<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'areas'</span>:</span><br><span class="line">  shops/apps/areas/migrations/<span class="number">0001</span>_initial.py</span><br><span class="line">    - Create model Area</span><br><span class="line">(shops_py3) ➜  shops git:(dev) ✗  python manage migrate</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>开发一定要心细. 细节问题不能出错…因为真的很难排查…</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> django </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> migrate </tag>
-            
-            <tag> database </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>关于开发过程的感受</title>
+      <title>关于开发姿势</title>
       <link href="/code/develop_and_think.html"/>
       <url>/code/develop_and_think.html</url>
       
-        <content type="html"><![CDATA[<h2 id="胡言乱语"><a href="#胡言乱语" class="headerlink" title="胡言乱语"></a>胡言乱语</h2><p>开发遇到解不开的问题,多看源码.看源码解题,一不要太爽的事情.哈哈哈.</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="胡言乱语"><a href="#胡言乱语" class="headerlink" title="胡言乱语"></a>胡言乱语</h2><p>开发遇到解不开的问题,多看源码.看源码解题.</p>]]></content>
       
       
       <categories>
@@ -373,29 +269,6 @@
     </entry>
     
     <entry>
-      <title>找BUG事件快乐的事情</title>
-      <link href="/code/fing_bug.html"/>
-      <url>/code/fing_bug.html</url>
-      
-        <content type="html"><![CDATA[<p>开发中出现BUG是非常正常是事情,找BUG也是非常爽的过程~</p><p>流程: </p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul><p>今天在开发django找回密码的功能.在进入修改密码页面之前需要针对当前用户生成access_token.错误的把JTF的接口调用过来了……</p><p>打断点排查顺利解决~</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> code </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> bug </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>mac系统下django日志如有中文报错的解决方法</title>
       <link href="/django/django_logging_error.html"/>
       <url>/django/django_logging_error.html</url>
@@ -415,31 +288,6 @@
             <tag> django </tag>
             
             <tag> logging </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>rest_framework知识点之:方法get_seriazlier</title>
-      <link href="/django/django_rest_framework_get_seriazlier.html"/>
-      <url>/django/django_rest_framework_get_seriazlier.html</url>
-      
-        <content type="html"><![CDATA[<p>rest_framework中get_seriazlier()方法的作用.</p><h2 id="先看案例"><a href="#先看案例" class="headerlink" title="先看案例"></a>先看案例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SMSCodeView</span><span class="params">(GenericAPIView)</span>:</span></span><br><span class="line">    <span class="string">"""短信验证码"""</span></span><br><span class="line">    <span class="comment"># 参数: mobile image_code_id, text</span></span><br><span class="line">    serializer_class = ImageCodeCheckSerializer()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, mobile)</span>:</span></span><br><span class="line">        <span class="comment"># 校验参数 (序列化器完成)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># self.get_serializer()的目的是把request, view, format 传到序列化器中.(看源码)</span></span><br><span class="line">        serializer = self.get_serializer(data=request.query_params)</span><br><span class="line">        serializer.is_valid(raise_exception=<span class="keyword">True</span>)</span><br><span class="line">        ...省略代码...</span><br></pre></td></tr></table></figure><p>这里<code>serializer = self.get_serializer(data=request.query_params)</code>目的有三个:<br>1.获取序列化器.<code>serializer_class = ImageCodeCheckSerializer()</code>.<br>2.断言<br>3.把request, view,format传到序列化器中,以供序列化器校验.(如果不看源码,这里会比较难理解.)</p><h2 id="看源码"><a href="#看源码" class="headerlink" title="看源码"></a>看源码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GenericAPIView</span><span class="params">(views.APIView)</span>:</span></span><br><span class="line">    ...无关代码省略...</span><br><span class="line">    queryset = <span class="keyword">None</span></span><br><span class="line">    serializer_class = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    ...无关代码省略...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        ...无关代码省略...</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里调用方法get_serializer_class() 目的就是返回序列化器!!</span></span><br><span class="line">        serializer_class = self.get_serializer_class()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里目的是获取参数并分装到字典中: reques, format, view</span></span><br><span class="line">        kwargs[<span class="string">'context'</span>] = self.get_serializer_context()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里目的是返回序列化器(此时已经把参数封装进去了.)</span></span><br><span class="line">        <span class="keyword">return</span> serializer_class(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer_class</span><span class="params">(self)</span>:</span></span><br><span class="line">        </span><br><span class="line">        ...注释和断言干掉不需要看...</span><br><span class="line">        <span class="comment"># 这是目的是: 返回类属性:序列化器</span></span><br><span class="line">        <span class="keyword">return</span> self.serializer_class</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer_context</span><span class="params">(self)</span>:</span></span><br><span class="line">        ...注释不需要看...</span><br><span class="line">        <span class="comment"># 这里目的是返回当前类视图的request, format, view并赋值</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">'request'</span>: self.request,</span><br><span class="line">            <span class="string">'format'</span>: self.format_kwarg,</span><br><span class="line">            <span class="string">'view'</span>: self</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>自此: 看明白才能理解为什么明明类属性中明明有序列化器我们还需要绕一大圈去获取序列化器.<br>原因很明确,就是为了把参数传递到序列化器中,以便序列化器做校验.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> django </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> django </tag>
-            
-            <tag> rest_framework </tag>
             
         </tags>
       
@@ -581,81 +429,6 @@
     </entry>
     
     <entry>
-      <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
-      <link href="/code/mkvirtualenv-stevedore-error.html"/>
-      <url>/code/mkvirtualenv-stevedore-error.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="事发有因"><a href="#事发有因" class="headerlink" title="事发有因"></a>事发有因</h3><p>一直以来我都是使用<code>virtualenv venv</code>来创建虚拟环境的.然后使用<code>source venv/bin/activate</code>激活虚拟环境. 虚拟环境越来越多,于是尝试使用<code>virtualenvwrapper</code>来管理虚拟环境.<code>pip install virtualenvwrapper</code> 没有问题.但是使用<code>mkvirtualenv</code>创建虚拟环境出现如下错误:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">JetmodeMacBook-Pro➜  ~  ᐅ  mkvirtualenv dj -p python3</span><br><span class="line">Already using interpreter /Library/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/bin/python3</span><br><span class="line">Using base prefix <span class="string">'/Library/Frameworks/Python.framework/Versions/3.6'</span></span><br><span class="line">New python executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python3</span><br><span class="line">Also creating executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">174</span>, <span class="keyword">in</span> _run_module_as_main</span><br><span class="line">    <span class="string">"__main__"</span>, fname, loader, pkg_name)</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">72</span>, <span class="keyword">in</span> _run_code</span><br><span class="line">    <span class="keyword">exec</span> code <span class="keyword">in</span> run_globals</span><br><span class="line">  File <span class="string">"/usr/local/lib/python2.7/site-packages/virtualenvwrapper-4.8.2-py2.7.egg/virtualenvwrapper/hook_loader.py"</span>, line <span class="number">16</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">from</span> stevedore <span class="keyword">import</span> ExtensionManager</span><br><span class="line">ImportError: No module named stevedore</span><br></pre></td></tr></table></figure><h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>原因是缺少<code>stevedore</code>模块.直接安装会继续报错,多次尝试后找到了解决办法.</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p><strong>使用pip2安装</strong>很多同学应该都是默认pip3版本,但是这个模块一定要使用pip2安装(我是这样的). zsh中键入pip后两次tab键找到选择pip2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip2 uninstall stevedore <span class="comment"># 先卸载</span></span><br><span class="line">sudo pip2 install stevedore <span class="comment"># 再安装</span></span><br></pre></td></tr></table></figure></p><p>然后再使用<code>mkvirtualenv django_py3 -p python3</code> 安装虚拟环境就不会报错了.</p><h3 id="延伸-虚拟环境"><a href="#延伸-虚拟环境" class="headerlink" title="延伸(虚拟环境)"></a>延伸(虚拟环境)</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenv</span><br><span class="line">sudo pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、创建目录用来存放虚拟环境</span></span><br><span class="line">mkdir </span><br><span class="line"><span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、打开~/.bashrc文件，并添加如下：</span></span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=<span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、运行</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><h4 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv -<span class="selector-tag">p</span> python3 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">workon</span> 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deactivate</span></span><br></pre></td></tr></table></figure><h4 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">rmvirtualenv</span> 虚拟环境名称</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> code </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> stevedore </tag>
-            
-            <tag> virtualenv </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>最简单的django程序</title>
-      <link href="/django/tiny-django-app.html"/>
-      <url>/django/tiny-django-app.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>最简单的django程序.包含创建工程,创建一个app,配置url,编辑视图函数, 注册app</p></blockquote><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject django_demo</span><br><span class="line"><span class="built_in">cd</span> django_demo</span><br></pre></td></tr></table></figure><h3 id="创建app"><a href="#创建app" class="headerlink" title="创建app"></a>创建app</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp users</span><br></pre></td></tr></table></figure><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在settings.py中</span></span><br><span class="line">users.apps.UsersConfig</span><br></pre></td></tr></table></figure><h3 id="编辑视图函数"><a href="#编辑视图函数" class="headerlink" title="编辑视图函数"></a>编辑视图函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中 views模块中</span></span><br><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    视图函数</span></span><br><span class="line"><span class="string">    :param request: django 默认的第一个参数,用户接收request请求</span></span><br><span class="line"><span class="string">    :return: 响应对象</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="built_in">return</span> HttpResponse(<span class="string">"这是用户界面"</span>)</span><br></pre></td></tr></table></figure><h3 id="添加视图url"><a href="#添加视图url" class="headerlink" title="添加视图url"></a>添加视图url</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中创建urls模块</span></span><br><span class="line">from django.conf.urls import url</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># url(路径, 视图)</span></span><br><span class="line">    url(r<span class="string">'^index/$'</span>, views.index),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="url前缀"><a href="#url前缀" class="headerlink" title="url前缀"></a>url前缀</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在全局urls中配置app</span></span><br><span class="line">from django.conf.urls import url, include</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类比flask中蓝图前缀</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    ...</span><br><span class="line">    url(r<span class="string">'^users/'</span>, include(<span class="string">'users.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="启动工程"><a href="#启动工程" class="headerlink" title="启动工程"></a>启动工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure><h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8000/users/index</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> django </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> python </tag>
-            
-            <tag> django </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>centos下启动flask程序</title>
-      <link href="/flask/centos-start-flask.html"/>
-      <url>/flask/centos-start-flask.html</url>
-      
-        <content type="html"><![CDATA[<h4 id="centos系统下安装ngnix-负责转发"><a href="#centos系统下安装ngnix-负责转发" class="headerlink" title="centos系统下安装ngnix(负责转发)"></a>centos系统下安装ngnix(负责转发)</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> ngnix</span><br></pre></td></tr></table></figure><h4 id="配置ngnix"><a href="#配置ngnix" class="headerlink" title="配置ngnix"></a>配置ngnix</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径: <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果是多台服务器的话，则在此配置，并修改 location 节点下面的 proxy_pass </span></span><br><span class="line"><span class="attribute">upstream</span> flask &#123;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5000</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5001</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">        <span class="comment"># 监听80端口</span></span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">        <span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">                <span class="comment"># 请求转发到gunicorn服务器</span></span><br><span class="line">                <span class="attribute">proxy_pass</span> http://127.0.0.1:5000;</span><br><span class="line">                <span class="comment"># 请求转发到多个gunicorn服务器</span></span><br><span class="line">                <span class="comment"># proxy_pass http://flask;</span></span><br><span class="line">                <span class="comment"># 设置请求头，并将头信息传递给服务器端 </span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">                <span class="comment"># 设置请求头，传递原始请求ip给 gunicorn 服务器</span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="3"><li><p>启动ngnix服务器</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure></li><li><p>python虚拟环境中安装 Gunicorn(wsgi协议的服务器)</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> Gunicorn</span><br></pre></td></tr></table></figure></li><li><p>启动Gunicorn</p></li></ol><ul><li>进入flask程序的启动文件所在文件夹.比如我的启动文件是manage.py<br>那么运行命令就是:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">gunicorn</span> <span class="selector-tag">-w</span> 2 <span class="selector-tag">-b</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:5000</span> <span class="selector-tag">manage</span><span class="selector-pseudo">:app</span> <span class="selector-tag">-D</span> <span class="selector-tag">--reload</span></span><br></pre></td></tr></table></figure></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参数含义: -D表示后台运行. --reload表示重启Gunicorn.已经运行的会重新启动不必要去<span class="built_in">kill</span>进程.</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> flask </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> flask </tag>
-            
-            <tag> ngnix </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>关于centos操作系统安装mysqlclient失败的解决方案</title>
       <link href="/flask/mysqlclientpython.html"/>
       <url>/flask/mysqlclientpython.html</url>
@@ -708,11 +481,11 @@
     </entry>
     
     <entry>
-      <title>Hello World</title>
-      <link href="/code/hello-world.html"/>
-      <url>/code/hello-world.html</url>
+      <title>docker安装和使用</title>
+      <link href="/code/install_docker_and_use.html"/>
+      <url>/code/install_docker_and_use.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>更新ubuntu的apt源索引<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p><p>安装包允许apt通过HTTPS使用仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure></p><p>添加Docker官方GPG key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p><p>设置Docker稳定版仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br></pre></td></tr></table></figure></p><p>添加仓库后，更新apt源索引<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure></p><p>安装最新版Docker CE（社区版）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure></p><p>检查Docker CE是否安装正确<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></p><p>出现如下信息，表示安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Status: Downloaded newer image <span class="keyword">for</span> hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> 1. The Docker client contacted the Docker daemon.</span><br><span class="line"> 2. The Docker daemon pulled the <span class="string">"hello-world"</span> image from the Docker Hub.</span><br><span class="line">    (amd64)</span><br><span class="line"> 3. The Docker daemon created a new container from that image <span class="built_in">which</span> runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> 4. The Docker daemon streamed that output to the Docker client, <span class="built_in">which</span> sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">Share images, automate workflows, and more with a free Docker ID:</span><br><span class="line"> https://hub.docker.com/</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> https://docs.docker.com/get-started/</span><br></pre></td></tr></table></figure></p><h3 id="启动与停止"><a href="#启动与停止" class="headerlink" title="启动与停止"></a>启动与停止</h3><p>安装完成Docker后，默认已经启动了docker服务，如需手动控制docker服务的启停，可执行如下命令</p><p>启动docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure></p><p>停止docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure></p><p>重启docker<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure></p>]]></content>
       
       
       <categories>
@@ -721,6 +494,162 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>开发记录之django框架数据库迁移</title>
+      <link href="/django/djang_migrate_dababase.html"/>
+      <url>/django/djang_migrate_dababase.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>今天新建了一个数据库模型, 但是却怎么也迁移不成功.显示:没有任何改变..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">No changes detected</span><br></pre></td></tr></table></figure></p><p>后来忽然想到一个问题: 我只是建立了数据模型,但是并没有个和django框架本身建立联系.<br>很显然我没有注册app….<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line">    <span class="string">'areas.apps.AreasConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>注册后再执行果然妥妥的成功了~~~<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'areas'</span>:</span><br><span class="line">  shops/apps/areas/migrations/<span class="number">0001</span>_initial.py</span><br><span class="line">    - Create model Area</span><br><span class="line">(shops_py3) ➜  shops git:(dev) ✗  python manage migrate</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>开发一定要心细. 细节问题不能出错…因为真的很难排查…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> migrate </tag>
+            
+            <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>rest_framework知识点之:方法get_seriazlier</title>
+      <link href="/django/django_rest_framework_get_seriazlier.html"/>
+      <url>/django/django_rest_framework_get_seriazlier.html</url>
+      
+        <content type="html"><![CDATA[<p>rest_framework中get_seriazlier()方法的作用.</p><h2 id="先看案例"><a href="#先看案例" class="headerlink" title="先看案例"></a>先看案例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SMSCodeView</span><span class="params">(GenericAPIView)</span>:</span></span><br><span class="line">    <span class="string">"""短信验证码"""</span></span><br><span class="line">    <span class="comment"># 参数: mobile image_code_id, text</span></span><br><span class="line">    serializer_class = ImageCodeCheckSerializer()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, mobile)</span>:</span></span><br><span class="line">        <span class="comment"># 校验参数 (序列化器完成)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># self.get_serializer()的目的是把request, view, format 传到序列化器中.(看源码)</span></span><br><span class="line">        serializer = self.get_serializer(data=request.query_params)</span><br><span class="line">        serializer.is_valid(raise_exception=<span class="keyword">True</span>)</span><br><span class="line">        ...省略代码...</span><br></pre></td></tr></table></figure><p>这里<code>serializer = self.get_serializer(data=request.query_params)</code>目的有三个:<br>1.获取序列化器.<code>serializer_class = ImageCodeCheckSerializer()</code>.<br>2.断言<br>3.把request, view,format传到序列化器中,以供序列化器校验.(如果不看源码,这里会比较难理解.)</p><h2 id="看源码"><a href="#看源码" class="headerlink" title="看源码"></a>看源码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GenericAPIView</span><span class="params">(views.APIView)</span>:</span></span><br><span class="line">    ...无关代码省略...</span><br><span class="line">    queryset = <span class="keyword">None</span></span><br><span class="line">    serializer_class = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    ...无关代码省略...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        ...无关代码省略...</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里调用方法get_serializer_class() 目的就是返回序列化器!!</span></span><br><span class="line">        serializer_class = self.get_serializer_class()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里目的是获取参数并分装到字典中: reques, format, view</span></span><br><span class="line">        kwargs[<span class="string">'context'</span>] = self.get_serializer_context()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 这里目的是返回序列化器(此时已经把参数封装进去了.)</span></span><br><span class="line">        <span class="keyword">return</span> serializer_class(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer_class</span><span class="params">(self)</span>:</span></span><br><span class="line">        </span><br><span class="line">        ...注释和断言干掉不需要看...</span><br><span class="line">        <span class="comment"># 这是目的是: 返回类属性:序列化器</span></span><br><span class="line">        <span class="keyword">return</span> self.serializer_class</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_serializer_context</span><span class="params">(self)</span>:</span></span><br><span class="line">        ...注释不需要看...</span><br><span class="line">        <span class="comment"># 这里目的是返回当前类视图的request, format, view并赋值</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">'request'</span>: self.request,</span><br><span class="line">            <span class="string">'format'</span>: self.format_kwarg,</span><br><span class="line">            <span class="string">'view'</span>: self</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>自此: 看明白才能理解为什么明明类属性中明明有序列化器我们还需要绕一大圈去获取序列化器.<br>原因很明确,就是为了把参数传递到序列化器中,以便序列化器做校验.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+            <tag> rest_framework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>每天定时任务APScheduler模块</title>
+      <link href="/python/module_APScheduler.html"/>
+      <url>/python/module_APScheduler.html</url>
+      
+        <content type="html"><![CDATA[<p>有的时候我们需要一个定时任务，每天同一时间点去发送。这时候，就需要写一个定时任务了。这里我们用到了APScheduler这个库，不了解的去看一下官方文档，这里以每天早上8点钟为例。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install APScheduler</span><br></pre></td></tr></table></figure><h2 id="APScheduler"><a href="#APScheduler" class="headerlink" title="APScheduler"></a>APScheduler</h2><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">APScheduler是一个<span class="keyword">python</span>的第三方库，用来提供<span class="keyword">python</span>的后台程序。包含四个组件，分别是：</span><br><span class="line"></span><br><span class="line">triggers： 任务触发器组件，提供任务触发方式</span><br><span class="line"></span><br><span class="line">job stores： 任务商店组件，提供任务保存方式</span><br><span class="line"></span><br><span class="line">executors： 任务调度组件，提供任务调度方式</span><br><span class="line"></span><br><span class="line">schedulers： 任务调度组件，提供任务工作方式</span><br></pre></td></tr></table></figure><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化一个调度器</span></span><br><span class="line">scheduler = BlockingScheduler()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"%s: 执行任务"</span>  % time.asctime()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加任务并设置触发方式为3s一次</span></span><br><span class="line">scheduler.add_job(job1, <span class="string">'interval'</span>, seconds=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开始运行调度器</span></span><br><span class="line">scheduler.start()</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(get_time() + <span class="string">" 开始执行任务"</span>)</span><br><span class="line">    scheduler.add_job(任务函数, <span class="string">'cron'</span>, day_of_week=<span class="string">'0-6'</span>, hour=<span class="number">8</span>, minute=<span class="number">00</span>, second=<span class="number">00</span>)</span><br><span class="line">    scheduler.start()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> APScheduler </tag>
+            
+            <tag> 定时任务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>调试BUG基本姿势</title>
+      <link href="/code/fing_bug.html"/>
+      <url>/code/fing_bug.html</url>
+      
+        <content type="html"><![CDATA[<p>调试BUG基本姿势：</p><ul><li>打开QQ音乐</li><li>打断点调试</li><li>看源码</li><li>实现不行再csdn,google…..</li></ul><p>今天在开发django找回密码的功能.在进入修改密码页面之前需要针对当前用户生成access_token.错误的把JTF的接口调用过来了……</p><p>打断点排查顺利解决~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bug </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>mkvirtualenv创建虚拟环境报错没有stevedore模块解决方案</title>
+      <link href="/code/mkvirtualenv-stevedore-error.html"/>
+      <url>/code/mkvirtualenv-stevedore-error.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="事发有因"><a href="#事发有因" class="headerlink" title="事发有因"></a>事发有因</h3><p>一直以来我都是使用<code>virtualenv venv</code>来创建虚拟环境的.然后使用<code>source venv/bin/activate</code>激活虚拟环境. 虚拟环境越来越多,于是尝试使用<code>virtualenvwrapper</code>来管理虚拟环境.<code>pip install virtualenvwrapper</code> 没有问题.但是使用<code>mkvirtualenv</code>创建虚拟环境出现如下错误:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">JetmodeMacBook-Pro➜  ~  ᐅ  mkvirtualenv dj -p python3</span><br><span class="line">Already using interpreter /Library/Frameworks/Python.framework/Versions/<span class="number">3.6</span>/bin/python3</span><br><span class="line">Using base prefix <span class="string">'/Library/Frameworks/Python.framework/Versions/3.6'</span></span><br><span class="line">New python executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python3</span><br><span class="line">Also creating executable <span class="keyword">in</span> /Users/jetmo/.virtualenvs/dj/bin/python</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">174</span>, <span class="keyword">in</span> _run_module_as_main</span><br><span class="line">    <span class="string">"__main__"</span>, fname, loader, pkg_name)</span><br><span class="line">  File <span class="string">"/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py"</span>, line <span class="number">72</span>, <span class="keyword">in</span> _run_code</span><br><span class="line">    <span class="keyword">exec</span> code <span class="keyword">in</span> run_globals</span><br><span class="line">  File <span class="string">"/usr/local/lib/python2.7/site-packages/virtualenvwrapper-4.8.2-py2.7.egg/virtualenvwrapper/hook_loader.py"</span>, line <span class="number">16</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">    <span class="keyword">from</span> stevedore <span class="keyword">import</span> ExtensionManager</span><br><span class="line">ImportError: No module named stevedore</span><br></pre></td></tr></table></figure><h3 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h3><p>原因是缺少<code>stevedore</code>模块.直接安装会继续报错,多次尝试后找到了解决办法.</p><h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p><strong>使用pip2安装</strong>很多同学应该都是默认pip3版本,但是这个模块一定要使用pip2安装(我是这样的). zsh中键入pip后两次tab键找到选择pip2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip2 uninstall stevedore <span class="comment"># 先卸载</span></span><br><span class="line">sudo pip2 install stevedore <span class="comment"># 再安装</span></span><br></pre></td></tr></table></figure></p><p>然后再使用<code>mkvirtualenv django_py3 -p python3</code> 安装虚拟环境就不会报错了.</p><h3 id="延伸-虚拟环境"><a href="#延伸-虚拟环境" class="headerlink" title="延伸(虚拟环境)"></a>延伸(虚拟环境)</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenv</span><br><span class="line">sudo pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、创建目录用来存放虚拟环境</span></span><br><span class="line">mkdir </span><br><span class="line"><span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2、打开~/.bashrc文件，并添加如下：</span></span><br><span class="line"><span class="built_in">export</span> WORKON_HOME=<span class="variable">$HOME</span>/.virtualenvs</span><br><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3、运行</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><h4 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv -<span class="selector-tag">p</span> python3 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">workon</span> 虚拟环境名称</span><br></pre></td></tr></table></figure><h4 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h4><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deactivate</span></span><br></pre></td></tr></table></figure><h4 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">rmvirtualenv</span> 虚拟环境名称</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> stevedore </tag>
+            
+            <tag> virtualenv </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>最简单的django程序</title>
+      <link href="/django/tiny-django-app.html"/>
+      <url>/django/tiny-django-app.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>最简单的django程序.包含创建工程,创建一个app,配置url,编辑视图函数, 注册app</p></blockquote><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject django_demo</span><br><span class="line"><span class="built_in">cd</span> django_demo</span><br></pre></td></tr></table></figure><h3 id="创建app"><a href="#创建app" class="headerlink" title="创建app"></a>创建app</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp users</span><br></pre></td></tr></table></figure><h3 id="注册app"><a href="#注册app" class="headerlink" title="注册app"></a>注册app</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在settings.py中</span></span><br><span class="line">users.apps.UsersConfig</span><br></pre></td></tr></table></figure><h3 id="编辑视图函数"><a href="#编辑视图函数" class="headerlink" title="编辑视图函数"></a>编辑视图函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中 views模块中</span></span><br><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"></span><br><span class="line">def index(request):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    视图函数</span></span><br><span class="line"><span class="string">    :param request: django 默认的第一个参数,用户接收request请求</span></span><br><span class="line"><span class="string">    :return: 响应对象</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="built_in">return</span> HttpResponse(<span class="string">"这是用户界面"</span>)</span><br></pre></td></tr></table></figure><h3 id="添加视图url"><a href="#添加视图url" class="headerlink" title="添加视图url"></a>添加视图url</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app中创建urls模块</span></span><br><span class="line">from django.conf.urls import url</span><br><span class="line"></span><br><span class="line">from . import views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment"># url(路径, 视图)</span></span><br><span class="line">    url(r<span class="string">'^index/$'</span>, views.index),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="url前缀"><a href="#url前缀" class="headerlink" title="url前缀"></a>url前缀</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在全局urls中配置app</span></span><br><span class="line">from django.conf.urls import url, include</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类比flask中蓝图前缀</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    ...</span><br><span class="line">    url(r<span class="string">'^users/'</span>, include(<span class="string">'users.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure><h3 id="启动工程"><a href="#启动工程" class="headerlink" title="启动工程"></a>启动工程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure><h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8000/users/index</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> django </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -746,6 +675,77 @@
             <tag> github </tag>
             
         </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>centos下启动flask程序</title>
+      <link href="/flask/centos-start-flask.html"/>
+      <url>/flask/centos-start-flask.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="centos系统下安装ngnix-负责转发"><a href="#centos系统下安装ngnix-负责转发" class="headerlink" title="centos系统下安装ngnix(负责转发)"></a>centos系统下安装ngnix(负责转发)</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> ngnix</span><br></pre></td></tr></table></figure><h4 id="配置ngnix"><a href="#配置ngnix" class="headerlink" title="配置ngnix"></a>配置ngnix</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置文件路径: <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果是多台服务器的话，则在此配置，并修改 location 节点下面的 proxy_pass </span></span><br><span class="line"><span class="attribute">upstream</span> flask &#123;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5000</span>;</span><br><span class="line">        <span class="attribute">server</span> <span class="number">127.0.0.1:5001</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">        <span class="comment"># 监听80端口</span></span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span> default_server;</span><br><span class="line">        <span class="attribute">listen</span> [::]:<span class="number">80</span> default_server;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">root</span> /var/www/html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">server_name</span> _;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">                <span class="comment"># 请求转发到gunicorn服务器</span></span><br><span class="line">                <span class="attribute">proxy_pass</span> http://127.0.0.1:5000;</span><br><span class="line">                <span class="comment"># 请求转发到多个gunicorn服务器</span></span><br><span class="line">                <span class="comment"># proxy_pass http://flask;</span></span><br><span class="line">                <span class="comment"># 设置请求头，并将头信息传递给服务器端 </span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">                <span class="comment"># 设置请求头，传递原始请求ip给 gunicorn 服务器</span></span><br><span class="line">                <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="3"><li><p>启动ngnix服务器</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -c <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf</span></span><br></pre></td></tr></table></figure></li><li><p>python虚拟环境中安装 Gunicorn(wsgi协议的服务器)</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> Gunicorn</span><br></pre></td></tr></table></figure></li><li><p>启动Gunicorn</p></li></ol><ul><li>进入flask程序的启动文件所在文件夹.比如我的启动文件是manage.py<br>那么运行命令就是:<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">gunicorn</span> <span class="selector-tag">-w</span> 2 <span class="selector-tag">-b</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:5000</span> <span class="selector-tag">manage</span><span class="selector-pseudo">:app</span> <span class="selector-tag">-D</span> <span class="selector-tag">--reload</span></span><br></pre></td></tr></table></figure></li></ul><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">参数含义: -D表示后台运行. <span class="comment">--reload表示重启Gunicorn.已经运行的会重新启动不必要去kill进程.</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> flask </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> flask </tag>
+            
+            <tag> ngnix </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>linux查看日志文件内容命令tail、cat、tac、head、echo</title>
+      <link href="/python/linux_log_command.html"/>
+      <url>/python/linux_log_command.html</url>
+      
+        <content type="html"><![CDATA[<ul><li>linux查看日志文件内容命令tail、cat、tac、head、echo<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f <span class="keyword">test</span>.<span class="built_in">log</span></span><br></pre></td></tr></table></figure></li></ul><p>你会看到屏幕不断有内容被打印出来. 这时候中断第一个进程Ctrl-C,</p><p>linux 如何显示一个文件的某几行(中间几行)</p><ul><li><p>从第3000行开始，显示1000行。即显示3000~3999行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename | <span class="type">tail</span> -n +<span class="number">3000</span> | <span class="type">head</span> -n <span class="number">1000</span></span><br></pre></td></tr></table></figure></li><li><p>显示1000行到3000行</p><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat filename| <span class="type">head</span> -n <span class="number">3000</span> | <span class="type">tail</span> -n +<span class="number">1000</span></span><br></pre></td></tr></table></figure></li></ul><p>注意两种方法的顺序</p><ul><li><p>分解：</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tail -n <span class="number">1000</span>：显示最后<span class="number">1000</span>行</span><br><span class="line">tail -n +<span class="number">1000</span>：从<span class="number">1000</span>行开始显示，显示<span class="number">1000</span>行以后的</span><br><span class="line">head -n <span class="number">1000</span>：显示前面<span class="number">1000</span>行</span><br></pre></td></tr></table></figure></li><li><p>用sed命令</p><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n '<span class="number">5</span>,<span class="number">10</span>p' filename 这样你就可以只查看文件的第<span class="number">5</span>行到第<span class="number">10</span>行。</span><br></pre></td></tr></table></figure></li></ul><p>例：cat mylog.log | tail -n 1000 #输出mylog.log 文件最后一千行</p><p>cat主要有三大功能：</p><ol><li>一次显示整个文件。$ cat filename</li><li>从键盘创建一个文件。$ cat &gt; filename<br>只能创建新文件,不能编辑已有文件.</li><li>将几个文件合并为一个文件：<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> $cat file1 file2 &gt; file</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line">-<span class="ruby">n 或 --number 由 <span class="number">1</span> 开始对所有输出的行数编号</span></span><br><span class="line"><span class="ruby">-b 或 --number-nonblank 和 -n 相似，只不过对于空白行不编号</span></span><br><span class="line"><span class="ruby">-s 或 --squeeze-blank 当遇到有连续两行以上的空白行，就代换为一行的空白行</span></span><br><span class="line"><span class="ruby">-v 或 --show-nonprinting</span></span><br></pre></td></tr></table></figure></li></ol><p>例：<br>把 textfile1 的档案内容加上行号后输入 textfile2 这个档案里<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -<span class="built_in">n</span> textfile1 &gt; textfile2</span><br></pre></td></tr></table></figure></p><p>把 textfile1 和 textfile2 的档案内容加上行号（空白行不加）之后将内容附加到 textfile3 里。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -b textfile1 textfile2 <span class="meta">&gt;&gt; </span>textfile3</span><br></pre></td></tr></table></figure></p><p>把test.txt文件扔进垃圾箱，赋空值test.txt<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/null &gt; <span class="regexp">/etc/test</span>.txt </span><br><span class="line">注意：&gt;意思是创建，<span class="meta">&gt;&gt;</span>是追加。千万不要弄混了。</span><br></pre></td></tr></table></figure></p><ul><li>tac (反向列示)<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tac 是将 <span class="built_in">cat</span> 反写过来，所以他的功能就跟 <span class="built_in">cat</span> 相反， <span class="built_in">cat</span> 是由第一行到最后一行连续显示在萤幕上，</span><br><span class="line">而 tac 则是由最后一行到第一行反向在萤幕上显示出来！</span><br></pre></td></tr></table></figure></li></ul><p>在Linux中echo命令用来在标准输出上显示一段字符，比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"the echo command test!"</span></span><br></pre></td></tr></table></figure></p><p>这个就会输出“the echo command test!”这一行文字！<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"the echo command test!"</span>&gt;<span class="selector-tag">a</span>.sh</span><br></pre></td></tr></table></figure></p><p>这个就会在a.sh文件中输出“the echo command test!”这一行文字！ </p><p>该命令的一般格式为： echo [ -n ] </p><p>字符串其中选项n表示输出文字后不换行；字符串能加引号，也能不加引号。</p><p>用echo命令输出加引号的字符串时，将字符串原样输出；</p><p>用echo命令输出不加引号的字符串时，将字符串中的各个单词作为字符串输出，各字符串之间用一个空格分割。</p><blockquote><p>摘自:<a href="https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html" target="_blank" rel="noopener">https://www.cnblogs.com/zdz8207/p/linux-log-tail-cat-tac.html</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> tail </tag>
+            
+            <tag> cat </tag>
+            
+            <tag> head </tag>
+            
+            <tag> echo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/code/hello-world.html"/>
+      <url>/code/hello-world.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> code </category>
+          
+      </categories>
+      
       
     </entry>
     

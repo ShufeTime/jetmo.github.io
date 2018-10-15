@@ -2,9 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.leejia.me/django/djang_migrate_dababase.html</loc>
+    
+    <lastmod>2018-10-15T05:35:44.735Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/django/django_rest_framework_get_seriazlier.html</loc>
+    
+    <lastmod>2018-10-15T05:35:15.880Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/python/module_APScheduler.html</loc>
+    
+    <lastmod>2018-10-15T05:34:31.029Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/develop_and_think.html</loc>
+    
+    <lastmod>2018-10-15T05:33:55.175Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/install_docker_and_use.html</loc>
+    
+    <lastmod>2018-10-15T05:32:34.160Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/flask/centos-start-flask.html</loc>
+    
+    <lastmod>2018-10-15T05:31:44.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/mkvirtualenv-stevedore-error.html</loc>
+    
+    <lastmod>2018-10-15T05:31:00.037Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/django/tiny-django-app.html</loc>
+    
+    <lastmod>2018-10-15T05:30:33.792Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/fing_bug.html</loc>
+    
+    <lastmod>2018-10-15T05:29:09.466Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/git.html</loc>
+    
+    <lastmod>2018-10-15T05:27:39.780Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.leejia.me/python/linux_log_command.html</loc>
     
-    <lastmod>2018-10-11T12:36:18.693Z</lastmod>
+    <lastmod>2018-10-15T05:27:13.004Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/code/hello-world.html</loc>
+    
+    <lastmod>2018-10-15T05:25:42.005Z</lastmod>
     
   </url>
   
@@ -19,13 +96,6 @@
     <loc>https://www.leejia.me/python/Unable-to-determine-the-name-of-the-local-timezone.html</loc>
     
     <lastmod>2018-10-09T10:30:06.619Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/python/module_APScheduler.html</loc>
-    
-    <lastmod>2018-10-09T03:10:00.018Z</lastmod>
     
   </url>
   
@@ -65,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/code/mkvirtualenv-stevedore-error.html</loc>
-    
-    <lastmod>2018-09-21T10:36:47.437Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.leejia.me/django/django_logging_error.html</loc>
     
     <lastmod>2018-09-21T10:34:42.346Z</lastmod>
@@ -86,20 +149,6 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/books/index.html</loc>
-    
-    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/repository/index.html</loc>
-    
-    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.leejia.me/categories/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
@@ -108,6 +157,20 @@
   
   <url>
     <loc>https://www.leejia.me/links/index.html</loc>
+    
+    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/books/index.html</loc>
+    
+    <lastmod>2018-09-21T06:59:01.996Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.leejia.me/repository/index.html</loc>
     
     <lastmod>2018-09-21T06:59:01.996Z</lastmod>
     
@@ -142,58 +205,9 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/code/fing_bug.html</loc>
-    
-    <lastmod>2018-09-17T02:29:04.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/code/develop_and_think.html</loc>
-    
-    <lastmod>2018-09-17T02:28:44.793Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.leejia.me/code/json2xml_xml2json.html</loc>
     
     <lastmod>2018-09-17T02:28:11.880Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/code/hello-world.html</loc>
-    
-    <lastmod>2018-09-17T02:28:01.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/code/git.html</loc>
-    
-    <lastmod>2018-09-17T02:27:50.815Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/code/install_docker_and_use.html</loc>
-    
-    <lastmod>2018-09-17T02:27:37.376Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/django/djang_migrate_dababase.html</loc>
-    
-    <lastmod>2018-09-16T02:53:29.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/django/django_rest_framework_get_seriazlier.html</loc>
-    
-    <lastmod>2018-09-09T08:00:01.435Z</lastmod>
     
   </url>
   
@@ -226,13 +240,6 @@
   </url>
   
   <url>
-    <loc>https://www.leejia.me/flask/centos-start-flask.html</loc>
-    
-    <lastmod>2018-08-30T10:53:09.216Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.leejia.me/flask/mysqlclientpython.html</loc>
     
     <lastmod>2018-08-30T10:50:54.923Z</lastmod>
@@ -243,13 +250,6 @@
     <loc>https://www.leejia.me/flask/centos-have-no-mysql.html</loc>
     
     <lastmod>2018-08-30T10:50:39.476Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.leejia.me/django/tiny-django-app.html</loc>
-    
-    <lastmod>2018-08-30T02:47:00.000Z</lastmod>
     
   </url>
   
