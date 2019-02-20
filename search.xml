@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>是时候离开pip和virtualenv全面拥抱Pipenv了</title>
+      <link href="/uncategorized/it_is_time_to_use_pipenv.html"/>
+      <url>/uncategorized/it_is_time_to_use_pipenv.html</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pipenv = pip + virtualenv</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>python列表的extend方法</title>
       <link href="/python/python_list_extend.html"/>
       <url>/python/python_list_extend.html</url>

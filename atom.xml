@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.leejia.me/"/>
-  <updated>2018-10-10T14:49:27.066Z</updated>
+  <updated>2019-02-20T07:12:28.484Z</updated>
   <id>https://www.leejia.me/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>是时候离开pip和virtualenv全面拥抱Pipenv了</title>
+    <link href="https://www.leejia.me/uncategorized/it_is_time_to_use_pipenv.html"/>
+    <id>https://www.leejia.me/uncategorized/it_is_time_to_use_pipenv.html</id>
+    <published>2019-02-20T07:11:26.000Z</published>
+    <updated>2019-02-20T07:12:28.484Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pipenv = pip + virtualenv</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cl
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>python列表的extend方法</title>
@@ -563,33 +584,6 @@
     
     
       <category term="docker" scheme="https://www.leejia.me/tags/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>开发记录之django框架数据库迁移</title>
-    <link href="https://www.leejia.me/django/djang_migrate_dababase.html"/>
-    <id>https://www.leejia.me/django/djang_migrate_dababase.html</id>
-    <published>2018-05-16T02:47:14.000Z</published>
-    <updated>2018-10-15T05:35:44.735Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>今天新建了一个数据库模型, 但是却怎么也迁移不成功.显示:没有任何改变..<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">No changes detected</span><br></pre></td></tr></table></figure></p><p>后来忽然想到一个问题: 我只是建立了数据模型,但是并没有个和django框架本身建立联系.<br>很显然我没有注册app….<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line">    <span class="string">'areas.apps.AreasConfig'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>注册后再执行果然妥妥的成功了~~~<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br></pre></td></tr></table></figure></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(shops_py3) ➜  shops git:(dev) ✗ python manage.py makemigrations</span><br><span class="line">Migrations <span class="keyword">for</span> <span class="string">'areas'</span>:</span><br><span class="line">  shops/apps/areas/migrations/<span class="number">0001</span>_initial.py</span><br><span class="line">    - Create model Area</span><br><span class="line">(shops_py3) ➜  shops git:(dev) ✗  python manage migrate</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>开发一定要心细. 细节问题不能出错…因为真的很难排查…</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot; title=&quot;记录&quot;&gt;&lt;/a&gt;记录&lt;/h2&gt;&lt;p&gt;今天新建了一个数据库模型, 但是却怎么也迁移不成功.显示:没有任何改变..&lt;br&gt;&lt;figure class=&quot;highlight pyth
-      
-    
-    </summary>
-    
-      <category term="django" scheme="https://www.leejia.me/categories/django/"/>
-    
-    
-      <category term="migrate" scheme="https://www.leejia.me/tags/migrate/"/>
-    
-      <category term="database" scheme="https://www.leejia.me/tags/database/"/>
     
   </entry>
   
